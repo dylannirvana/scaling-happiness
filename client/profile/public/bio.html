@@ -1,0 +1,25 @@
+<template name="publicBio">
+  <div class="bio public-bio">
+    <div class="row">
+      <div class="col-sm-2"><strong>Birthday</strong></div>
+      <div class="col-sm-10">{{profile.dob}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2"><strong>Country</strong></div>
+      <div class="col-sm-10">{{profile.country}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2"><strong>Personal story</strong></div>
+      <div class="col-sm-10">{{profile.bio.interests}}</div>
+    </div>  
+
+    <div class="row">
+      <div class="col-sm-2"><strong>History</strong></div>
+      <div class="col-sm-10">{{profile.bio.history}}</div>
+    </div>
+    <!-- {{{profile.bio}}} -->
+  </div>  
+
+</template>

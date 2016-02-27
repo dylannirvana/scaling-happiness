@@ -1,0 +1,13 @@
+.album-list li,
+.album-list .track-item {
+  margin-bottom: 30px;
+  width: 145px; /* to keep 3 columns */
+  float: left;
+  height: 220px;
+  display: block;
+  margin-right: 10px;
+}
+
+.playlist {
+  min-height: 100px;
+}

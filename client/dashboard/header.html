@@ -1,0 +1,91 @@
+<template name="header">
+  <!-- Start: Header -->
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <!--top-menu start-->
+        <ul class="col-lg-4 col-md-4 top-menu">
+          <li><a href="{{ pathFor 'profile' }}">Home</a></li>
+
+          
+            <li class="dropdown"><a                   
+                  class="dropdown-toggle" 
+                  id="crowdfunding-menu"
+                  data-toggle="dropdown" 
+                  aria-haspopup="true" 
+                  aria-expanded="true">Crowdfunding</a>
+
+            <ul class="dropdown-menu" aria-labelledby="crowdfunding-menu">
+              <li><a href="{{ pathFor 'allProjects' }} ">All Projects</a></li>
+              {{#if isMusician}}<li><a href="{{ pathFor 'newProject' }}">New Project</a></li>{{/if}}
+            </ul>
+            </li>          
+
+          <!-- <li><a href="#">Music news</a></li> -->
+        </ul>
+        <!--top-menu end-->
+
+        <form action="#" class="col-lg-4 col-md-4 search-form">
+          <div class="search-input">
+            {{> esInput index="users" placeholder="Search by email or name" }}
+            <!-- <input type="text" placeholder="Search by email, artist or song..."/> -->
+            <button>
+              <i class="fa fa-search"></i>
+            </button>            
+          </div>
+          <div class="search-results">
+            {{> esLoadMoreButton index="users"}}
+
+            {{#ifEsHasNoResults index="users"}}
+                <div class="no-results">No results found!</div>
+            {{/ifEsHasNoResults}}
+
+            {{#ifEsIsSearching index="users"}}
+                    <div>Loading...</div>
+            {{/ifEsIsSearching}}
+
+            {{#esEach index="users"}}
+              <ul> 
+                <li>           
+                  <a href="{{pathFor 'profilePublic'}}">{{profile.name}}</a>
+                </li>
+              </ul>
+            {{/esEach}}
+          </div>
+        </form>
+
+        <!--user-info start-->
+        <div class="user-info pull-right">
+          <div class="dropdown pull-left">
+            <a class="dropdown-toggle"
+               id="userInfoDropdown"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="true"
+               href="{{pathFor 'profile' }}">
+
+              <span class="user-name">{{currentUser.profile.name}}</span>
+              <div class="pull-right user-photo">
+                <img src="{{currentUser.profile.photo}}" alt="{{currentUser.profile.name}}"/>
+              </div>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="userInfoDropdown">
+              <li><a href="{{pathFor 'profile'}}">My Profile</a></li>
+              <li><a href="{{pathFor 'profileEdit'}}">Edit Profile</a></li>
+              <!-- <li><a href="#">Public Profile</a></li> -->
+              <!-- <li><a href="{{pathFor 'profileBilling'}}">Billing</a></li> -->
+              <li><a id="logout" class="log-out" href="#">Log out</a></li>
+            </ul>
+          </div>
+
+          <a href="{{pathFor 'profileSettings'}}" class="settings">
+            <i class="fa fa-cog"></i>
+          </a>
+        </div>
+        <!--user-info end-->
+      </div>
+    </div>
+  </header>
+  <!-- End: Header -->
+</template>

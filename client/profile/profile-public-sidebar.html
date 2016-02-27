@@ -1,0 +1,26 @@
+<template name="profilePublicSidebar-old">
+<div class="col-lg-4 col-md-4 pull-right user-sidebar-col">
+
+  <!--user-panel start-->
+  <div class="user-panel">
+    <div class="user-photo">
+      <img src="{{profile.photo}}" alt=""/>
+    </div>
+    <div class="user-name text-center">
+      <a href="{{pathFor 'profile'}}">{{profile.name}}</a>
+    </div>
+
+    <ul class="user-menu">
+      <li><a href="{{pathFor 'profileBio' }}">Bio</a></li>
+      <li><a href="{{pathFor 'profileDiary'}}">Diary</a></li>
+      <li><a href="{{pathFor 'profileSelfies'}}">Selfies</a></li>
+      <li><a href="{{pathFor 'playlist.picture'}}">Picture Album</a></li>
+      <li><a href="{{pathFor 'playlist.video'}}">Video Album</a></li>
+      <li><a href="{{pathFor 'playlist.album'}}">Playlist Album</a></li>
+    </ul>
+  </div>
+  <!--user-panel end-->
+
+</div>
+
+</template>

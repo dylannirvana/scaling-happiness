@@ -1,0 +1,67 @@
+#take-selfie {
+  margin: 25px 0;
+}
+
+.selfie-list li {
+  width: 115px;
+  float: left;
+  margin-right: 5px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.selfie-list li img {
+  width: 100%;
+}
+
+.selfie-list li i {
+  position: absolute;
+  background: red;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+canvas#canvas {
+  position: absolute;
+  left: -10000px;
+}
+
+.selfie-date {
+  position: absolute;
+  background: rgba(255,255,255,0.7);
+  color: #000;
+  font-size: 12px;
+  line-height: 20px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.selfie-list li:hover .selfie-date {
+  display: block;
+}
+
+.selfies-grouped-by-date {
+  margin-bottom: 20px;
+}
+
+.selfies-grouped-by-date h4 {
+  display: inline-block;
+  font-size: 14px;
+  float: left;
+  width: 20%;
+}
+
+.selfies-grouped-by-date ul,
+.single-selfie img {
+  float: left;
+  width: 80%;
+}

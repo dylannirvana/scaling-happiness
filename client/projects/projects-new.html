@@ -1,0 +1,31 @@
+<template name="projectsNew">
+  <h3>Create New Project</h3>
+  
+  {{#autoForm collection="Projects" id="insertProjectForm" type="insert" class="form"}}
+  <section>
+    {{> afFieldInput name="title" id="title" placeholder="Project title"}}
+  </section>
+
+  <section>
+    {{> afFieldInput type="textarea" name="description" id="description" placeholder="Short Description" rows="3"}}
+  </section>
+
+  <section>
+    {{> afFieldInput name="goalAmount" id="goalAmount" placeholder="Target goal amount $USD"}}
+  </section>
+
+  <section>
+    <div class="upload-button">
+      Upload cover picture
+      <input id="project-photo" type="file"/>
+      {{> afFieldInput name="coverImage" id="coverImage" type="hidden"}}
+      
+    </div>
+  </section>
+
+  <section>
+    <button class="btn btn-primary" type="submit">Create Project</button>
+  </section>
+  {{/autoForm}}
+  
+</template>

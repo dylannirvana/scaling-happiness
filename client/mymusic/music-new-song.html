@@ -1,0 +1,74 @@
+<template name="MusicUpload">
+
+{{#if isFan}}
+  <div class="alert alert-warning">
+    Please <a href="{{pathFor 'profileBilling'}}">upgrade your account</a> in order to uplaod songs
+  </div>
+{{else}}
+  <h4>Upload New Track</h4>
+  <form class="row" id="new-song-form">
+    <div class="col-lg-8 col-md-8">
+
+      <section class="icon-field">
+        <input class="form-control" type="text" placeholder="Title" id="title" name="title" required/>
+        <i class="fa fa-pencil"></i>
+      </section>
+
+      <section class="icon-field">
+        <input class="form-control" type="text" placeholder="Author" id="author" name="author" required/>
+        <i class="fa fa-user"></i>
+      </section>
+
+      <section class="icon-field">
+        <textarea class="form-control" rows="4" type="text" id="description" placeholder="Description" name="description" required></textarea>
+        <i class="fa fa-align-left"></i>
+      </section>
+
+      <section class="form-group">
+        <label for="music-file" id="music-file-label"><i class="fa fa-file-audio-o"></i> Upload music</label>
+        <input accept="audio/*"  id="music-file" type="file" required>
+      </section>
+
+      <section class="icon-field">
+        <input class="form-control" type="text" placeholder="Tags" name="tags" required/>
+        <i class="fa fa-tags"></i>
+      </section>
+
+      <section class="form-group">
+        <label for="image-file" id="image-file-label"><i class="fa fa-file-image-o"></i> Upload cover image</label>
+        <input accept="image/*"  id="image-file" type="file" required>
+      </section>
+
+      <section>
+        <button class="btn btn-primary col-lg-12 col-md-12" id="upload-submit">UPLOAD</button>
+      </section>
+
+    </div>
+  </form>
+ {{/if}} 
+
+  <script>
+    // $(document).on('change', '.btn-file :file', function() {
+    //   var input = $(this),
+    //       numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    //       label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    //   input.trigger('fileselect', [numFiles, label]);
+    // });
+
+    // $(document).ready( function() {
+    //   $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+
+    //     var input = $(this).parents('.input-group').find(':text'),
+    //         log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+    //     if( input.length ) {
+    //       input.val(log);
+    //     } else {
+    //       if( log ) alert(log);
+    //     }
+
+    //   });
+    // });
+  </script>
+
+</template>

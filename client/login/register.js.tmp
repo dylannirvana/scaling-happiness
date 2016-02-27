@@ -1,0 +1,280 @@
+var errorSystem = new GK.ErrorSystem();
+var current_fs, next_fs, previous_fs; //fieldsets
+var left, opacity, scale; //fieldset properties which we will animate
+var animating; //flag to prevent quick multi-click glitches
+
+
+Template.register.rendered = function() {
+  $('#dob-input').mask('99/99/9999');
+// $(".submit").click(function(){
+//   return false;
+// })
+
+} // end rendered
+
+
+Template.register.events({
+  
+  'click .previous': function(e) {
+
+    if(animating) return false;
+    animating = true;
+    
+    current_fs = $(e.currentTarget).parent();
+    previous_fs = $(e.currentTarget).parent().prev();
+    
+    //de-activate current step on progressbar
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+    
+    //show the previous fieldset
+    previous_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale previous_fs from 80% to 100%
+        scale = 0.8 + (1 - now) * 0.2;
+        //2. take current_fs to the right(50%) - from 0%
+        left = ((1-now) * 50)+"%";
+        //3. increase opacity of previous_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({'left': left});
+        previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+      }, 
+      duration: 800, 
+      complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  },
+
+
+  'click .next': function(e){
+    e.preventDefault();    
+    
+    //if(animating) return false;
+    animating = true;
+    
+    current_fs = $(e.currentTarget).parent();
+    next_fs = $(e.currentTarget).parent().next();
+    current_fs.find('input').removeClass('error');
+    
+
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+    
+    //console.log(next_fs);
+    //show the next fieldset
+    
+    
+    // check for errors
+    if($('#first-name').val() == '') {
+      $('#first-name').addClass('error');
+      toastr.error('Please enter first name', 'Missing value');
+    } else if($('#last-name').val() == '') {
+      $('#last-name').addClass('error');
+      toastr.error('Please enter last name', 'Missing value');
+    } else if ($('#email').val() == '') {
+      $('#email').addClass('error');
+      toastr.error('Please enter email', 'Missing value');
+    } else if ($('#password').val() == '') {
+      $('#password').addClass('error');
+      toastr.error('Please enter password', 'Missing value');
+    } else if ($('#password').val() != $('#confirm-password').val()) {
+      $('#password').addClass('error');
+      toastr.error('Passwords do not match', 'Mistyped value');
+    } else {
+      // if no errors, proceed to the nexrt step
+      next_fs.show();
+      //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale current_fs down to 80%
+        scale = 1 - (1 - now) * 0.2;
+        //2. bring next_fs from the right(50%)
+        left = (now * 50)+"%";
+        //3. increase opacity of next_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({'transform': 'scale('+scale+')'});
+        next_fs.css({'left': left, 'opacity': opacity});
+      }, 
+        duration: 800, 
+        complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+      });
+    }
+    
+
+    
+  },
+
+
+  'click .next-final': function(e) {
+    e.preventDefault();    
+    
+    //if(animating) return false;
+    animating = true;
+    
+    current_fs = $(e.currentTarget).parent();
+    next_fs = $(e.currentTarget).parent().next();
+    
+    var accountType = $('input[name=account]:checked').val();
+    if(accountType == 'free'){
+      next_fs = $('#user-details');
+    } else {
+      next_fs = $('#band-details');
+    }
+
+    next_fs.show();
+      //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale current_fs down to 80%
+        scale = 1 - (1 - now) * 0.2;
+        //2. bring next_fs from the right(50%)
+        left = (now * 50)+"%";
+        //3. increase opacity of next_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({'transform': 'scale('+scale+')'});
+        next_fs.css({'left': left, 'opacity': opacity});
+      }, 
+        duration: 800, 
+        complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+      });
+    
+
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+  },
+
+
+  'click .previous-final': function(e) {
+    current_fs = $(e.currentTarget).parent();
+
+    previous_fs = $('#account-type-fieldset');
+    var accountType = $('input[name=account]:checked').val();
+
+    //de-activate current step on progressbar
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+    
+    //show the previous fieldset
+    previous_fs.show(); 
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale previous_fs from 80% to 100%
+        scale = 0.8 + (1 - now) * 0.2;
+        //2. take current_fs to the right(50%) - from 0%
+        left = ((1-now) * 50)+"%";
+        //3. increase opacity of previous_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({'left': left});
+        previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+      }, 
+      duration: 800, 
+      complete: function(){
+        current_fs.hide();
+        animating = false;
+      }, 
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  },
+
+
+  'submit #registration-form': function(e) {
+    e.preventDefault();
+
+
+
+    var form = $('#registration-form');
+    var formValues = GK.convertSerializedArray(form.serializeArray()); //serilize form array
+    var accountType = $('input[name=account]:checked').val();
+
+    //var accountType = $('input[name=account]:checked', '#registration-form').val();
+    errorSystem.resetErrors(); // reset the errors
+    console.log(formValues);
+
+    // gather up the user info into an object
+    var userObj = {
+      username: formValues.email,
+      email: formValues.email,
+      password: formValues.password,
+      profile: {
+        email: formValues.emailAddress,
+        name: formValues.firstName + ' ' + formValues.lastName,
+        photo: '/images/default_profile.png',
+        firstName: formValues.firstName,
+        lastName: formValues.lastName,
+        country: $('#registration-form #country-select').val(),
+        phone: formValues.phone,
+        website: formValues.website,
+        dob: formValues.dobInput,
+        gender: formValues.gender,
+        accountType: formValues.account     
+      }
+    };
+
+    if($('#country-select:visible').val() == '') {
+      toastr.error('Please select country', 'Missing value');
+    } else if(accountType == 'free' && $('#dob-input').val() == ''){
+      toastr.error('Please enter your date of birth', 'Missing value');
+    } else if(accountType == 'musician' && $('#website').val() == '') {
+      toastr.error('Please enter your website', 'Missing value'); 
+    } else if (formValues.password === formValues.confirmPassword) {
+      // if passwords match
+      // create the user
+      var roles = [userObj.accountType];
+
+      // create the user
+      Accounts.createUser(userObj, function(err) {
+        // console.log('there was an issue creating the account...', err);
+        if(!err) {                  
+          // send the user into their dashboard
+          Router.go('profileEdit');
+
+        } else {
+          toastr.error(err.reason, 'Error');
+        }
+      });
+    }
+
+    //   Meteor.call("registerUser", userObj, roles, function(err, res) {
+    //     if(err) throw(err);
+
+    //     Meteor.loginWithPassword(
+    //       userObj.username,
+    //       userObj.password,
+    //       function(error) {
+    //         if (error) {
+    //           console.log(error);
+    //           Session.set('error', 'user not found');
+    //         } else {
+    //           // if there are no errors then send the user
+    //           // into their dashboard
+    //           Router.go('profileEdit');
+    //         }
+    //       } //end callback
+    //     );
+    //   });
+    // } else {
+    //   // if passwords do not match throw an error
+    //   errorSystem.addError('Passwords do not match');
+    // }
+  } // end submit event
+});

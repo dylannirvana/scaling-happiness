@@ -1,0 +1,38 @@
+<template name="login">
+
+<form id="login-form" class="form">
+    <h2>Login to your account</h2>
+
+    <div class="form-group">
+      <input type="email" class="form-control" id="login-email-input" placeholder="Email Address" required>
+    </div>
+    
+    <div class="form-group">   
+      <input type="password" class="form-control" id="login-password-input" placeholder="Password" required> 
+    </div>
+
+    <div class="form-group clearfix">
+      <div class="col-sm-6 no-padding">
+
+      </div>
+      <div class="col-sm-6 no-padding">
+        <input type="submit" value="Login" class="btn btn-block btn-primary">
+      </div>
+
+    </div>
+
+    <div class="forgot-password clearfix">
+      <a href="{{pathFor 'forgot-password'}}" class="dark">Forgot your password?</a>
+    </div>
+
+    <div class="form-grop">
+      <a href="{{ pathFor 'register' }}" class="btn btn-block btn-primary">
+        Don’t have an account yet? Create your account
+      </a>
+    </div>
+
+</form>
+
+
+
+</template>

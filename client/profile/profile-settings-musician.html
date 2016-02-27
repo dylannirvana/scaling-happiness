@@ -1,0 +1,18 @@
+<template name="profileSettingsMusician">
+<form class="form-inline">
+  
+  <div class="checkbox clearfix form-group">
+    <label>
+      <input type="checkbox" id="profile-dont-allow-followers" checked="{{currentUser.profile.settings.allowFollowers}}"> Allow users to follow you
+    </label>
+  </div>
+
+
+  <div class="checkbox clearfix form-group">
+    <label>
+      <input type="checkbox" id="profile-dont-allow-birthday" checked="{{currentUser.profile.settings.allowBirthday}}"> Allow users to see your birthday
+    </label>
+  </div>
+
+</form>
+</template>

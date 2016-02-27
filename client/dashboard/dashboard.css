@@ -1,0 +1,213 @@
+
+body {
+  color: #fff;
+  background: #ed3b4b;
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+button {
+  background: none;
+}
+
+label.block {
+  display: block;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+input {
+  color: #2c3e50;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+a.dark {
+  color: #2c3e50;
+}
+
+.btn-primary {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.content-inner a.btn-danger {
+  color: #fff;
+}
+
+.content-inner a.btn-info {
+  background: #ed3b4b;
+  color: #fff;
+  border:none;
+}
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.form-control,
+.btn {
+  border-radius: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+
+
+
+/***
+
+Main Content
+
+
+****/
+
+.content {
+  /*overflow: hidden;*/
+}
+
+.content.col-md-7 {
+  width: 63%;
+}
+
+.main-content {
+  background: #ecf0f1;
+  padding: 15px 0;
+  color: #2c3e50;
+}
+
+.content-inner {
+  background: #f6f6f6;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.content-inner a {
+  color: #e7573e;
+}
+
+.inner-content-area {
+  height: 650px;
+  overflow: scroll;
+}
+
+.inner-content-area.dragging {
+  overflow: initial;
+}
+
+.breadcrumbs-col {
+  margin-bottom: 15px;
+}
+
+.breadcrumbs {
+  border-bottom: 1px solid #dedede;
+}
+
+.breadcrumbs-inner {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 3px;
+}
+
+.breadcrumbs li {
+  float: left;
+}
+
+.breadcrumbs a {
+  color: #bababa;
+}
+
+.breadcrumbs li:after {
+  content: '>';
+  color: #bababa;
+  padding: 0 3px;
+}
+
+.breadcrumbs li:last-child:after {
+  content: '';
+}
+
+.froala-editor.f-basic {
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #000 !important;
+}
+
+.froala-wrapper.f-basic {
+  padding-bottom: 65px;
+  min-height: 100px;
+}
+
+.froala-editor.f-basic .fr-bttn {
+  padding: 0 3px;
+}
+
+.terms-wrapper h1 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.terms-wrapper h2 {
+  font-size: 22px;
+  text-align: center;
+}
+
+
+footer {
+  text-align: center;
+  padding: 15px 0;
+}
+
+
+@media only screen 
+  and (min-width : 320px) 
+  and (max-width : 480px) {
+ 
+    .search-form,
+    .right-sidebar,
+    .user-name,
+    .settings {
+      display: none;
+    }
+
+    .user-sidebar-col {
+      width: 100%;
+    }
+
+}

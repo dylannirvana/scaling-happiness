@@ -1,0 +1,25 @@
+<template name="profileDiary">
+
+{{#if isPublic}}
+
+{{else}}
+<div class="diary-nav">
+  <a class="next" href="{{pathFor route='profileDiary' query=nextDate}}">
+    <i class="fa fa-chevron-circle-right"></i>
+  </a>
+  <h3>{{diaryDateFromURL}}</h3>
+  <a class="prev" href="{{pathFor route='profileDiary' query=prevDate}}">
+    <i class="fa fa-chevron-circle-left"></i>
+  </a>
+</div>
+
+<div class="text-editor new-diary-editor clearfix">
+  {{> dashboard_textEditor data=currentDiary.content }}
+  <div class="diary-buttons">
+    <button class="btn btn-primary pull-left" id="create-new-diary">Post diary</button>
+    <a class="btn btn-info pull-right" id="delete-diary">Delete diary</a>
+  </div>
+</div>
+{{/if}}
+
+</template>

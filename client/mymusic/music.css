@@ -1,0 +1,17 @@
+.table-layout > div, .table-layout > aside, .table-layout > section {
+  vertical-align: top;
+  display: table-cell;
+  float: none;
+}
+
+#music-file-label {
+  background: #ed3b4b;
+  color: #fff;
+  padding: 5px 10px;
+  display: block;
+  cursor: pointer;
+}
+
+#music-file-label i {
+  margin-right: 10px;
+}

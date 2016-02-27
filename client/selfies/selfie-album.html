@@ -1,0 +1,31 @@
+<template name="selfies">
+
+
+
+{{#each selfiesGroupedByDate}}
+<div class="clearfix selfies-grouped-by-date">
+  <h4>{{dateFormatted date}}</h4>
+  <ul class="selfie-list">
+    {{#each selfies}}
+      <li>
+        {{#if isPublic}}        
+        <a href="" class="open-public-selfie" data-id="{{_id}}">
+          <img src="{{image}}" class="selfie">
+        </a>
+        {{else}}
+        <a href="{{pathFor 'selfieDetails'}}"><img src="{{image}}" class="selfie"></a>
+        <i class="fa fa-trash"></i>
+        <!-- <span class="selfie-date">{{postedOn}}</span> -->
+        {{/if}}
+      </li>
+
+    {{/each}}
+  </ul>
+</div>
+{{/each}}
+
+
+
+
+
+</template>

@@ -1,0 +1,126 @@
+/*
+ *
+ * Header start
+ *
+ */
+header {
+  height: 61px;
+  border-bottom: 1px solid #401c15;
+  position: relative;
+  z-index: 2;
+}
+
+header a:hover {
+  background: #bb4632;
+}
+
+.top-menu {
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 0;
+}
+
+.top-menu > li {
+  float: left;
+  border-right: 1px solid #401c15;
+}
+
+.top-menu > li a {
+  display: block;
+  line-height: 60px;
+  padding: 0 27px;
+}
+
+.search-form {
+  margin: 15px 0;
+}
+
+.search-input {
+  position: relative;
+}
+
+.search-input button {
+  display: block;
+  height: 100%;
+  padding: 0 15px;
+  cursor: pointer;
+  color: #c0c0c0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.search-form input {
+  width: 100%;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #f48d96;
+  padding: 5px 40px 5px 15px;
+}
+
+.user-info {
+  max-width: 24%;
+  color: #e8e8e8;
+  line-height: 60px;
+  padding-left: 15px;
+}
+
+.user-info > a,
+.user-info .dropdown > a {
+  height: 100%;
+  float: left;
+  padding: 0 15px;
+}
+
+.user-info .user-photo img {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+.user-info .settings {
+  font-size: 1.5em;
+}
+
+.user-info .dropdown-menu,
+.top-menu .dropdown-menu {
+  margin: 1px 0 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: #ed3b4b;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.user-info .dropdown-menu > li,
+.top-menu .dropdown-menu > li {
+  border-bottom: 1px solid #000;
+}
+
+.user-info .dropdown-menu > li:last-child {
+  border: 0;
+}
+
+.user-info .dropdown-menu > li > a {
+  color: #fff;
+  line-height: 42px;
+  padding: 0 15px;
+}
+
+.user-info .dropdown-menu > li > a:hover {
+  background: #bb4632;
+}
+
+.search-results {
+  background: #eee;
+  padding: 10px;
+  display: none;
+  color: #111;
+}
+
+.search-results a {
+  color: navy;
+}

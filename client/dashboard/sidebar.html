@@ -1,0 +1,83 @@
+<template name="sidebar">
+
+  <!--left-sidebar start-->
+  <div class="left-sidebar col-md-3">
+    <a class="logo" href="#">
+      <img src="/images/logo.png" alt=""/>
+    </a>
+
+    <!--left-menu start-->
+    <ul class="left-menu">
+      <li class="my-playlist sidebar-playlist">
+        <div class="playlist-type">
+          <a href="#">my playlist</a>
+        </div>
+        <div class="player">
+          <!--controls start-->
+          <div class="clearfix controls">
+            <div class="pull-left">
+              <button id="play-my-playlist"><i class="fa fa-play"></i></button>
+              <button id="pause-my-playlist"><i class="fa fa-pause"></i></button>
+              <!-- <button id="stop-my-playlist"><i class="fa fa-stop"></i></button> -->
+            </div>
+            <div class="pull-right">
+              <button><i class="fa fa-step-backward"></i></button>
+              <button><i class="fa fa-step-forward"></i></button>
+            </div>
+          </div>
+          <!--controls end-->
+          {{>myMusicPlaylist}}
+          
+        </div>
+      </li>
+      <li class="playlist-by-singers sidebar-playlist">
+        <div class="playlist-type">
+          <a href="#">playlist by<br> singers</a>
+        </div>
+        <div class="player">
+          <!--controls start-->
+          <div class="clearfix controls">
+            <div class="pull-left">
+              <button id="play-singer-playlist"><i class="fa fa-play"></i></button>
+              <button id="pause-singer-playlist"><i class="fa fa-pause"></i></button>
+              <!-- <button><i class="fa fa-stop"></i></button> -->
+            </div>
+            <div class="pull-right">
+              <button><i class="fa fa-step-backward"></i></button>
+              <button><i class="fa fa-step-forward"></i></button>
+            </div>
+          </div>
+          <!--controls end-->
+          {{>SingerMusicPlaylist}}
+          
+        </div>
+      </li>
+      <li class="playlist-by-songs sidebar-playlist">
+        <div class="playlist-type">
+          <a href="#">playlist by<br> songs</a>
+        </div>
+        <div class="player">
+          <!--controls start-->
+          <div class="clearfix controls">
+            <div class="pull-left">
+              <button id="play-song-playlist"><i class="fa fa-play"></i></button>
+              <button id="pause-song-playlist"><i class="fa fa-pause"></i></button>
+              <!-- <button><i class="fa fa-stop"></i></button> -->
+            </div>
+            <div class="pull-right">
+              <button><i class="fa fa-step-backward"></i></button>
+              <button><i class="fa fa-step-forward"></i></button>
+            </div>
+          </div>
+          <!--controls end-->
+          {{>SongMusicPlaylist}}
+          
+        </div>
+      </li>
+      <!-- <li class="chat-rooms"><div class="playlist-type"><a href="#">chat rooms</a></div></li> -->
+    </ul>
+    <!--left-menu end-->
+  </div>
+  <!--left-sidebar end-->
+
+</template>

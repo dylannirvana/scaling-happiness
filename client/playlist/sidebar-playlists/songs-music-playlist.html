@@ -1,0 +1,15 @@
+<template name="SongMusicPlaylist">
+
+<ul class="playlist" id="song-playlist">
+  
+  {{#each tracks}}
+    <li class="playlist-item-wrapper" data-playlist="SongPlaylistItems">{{>playlistItem}}</li>
+  {{/each}}
+
+  {{#if isNoTracks}}
+    Drop songs here
+  {{/if}}
+
+</ul>
+
+</template>

@@ -1,0 +1,155 @@
+.intro-pages {
+  background: #ed1f32;
+/*  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;*/
+}
+
+.intro-pages .row {
+  margin: 0;
+}
+
+.intro-messages {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #ed1f32;
+  min-height: 100%;
+}
+
+.intro-messages .intro {
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.intro-messages .logo {
+  float: left;
+  width: 200px;
+  margin: 0 1% 0 5%;
+}
+
+.intro-messages h1 {
+  float: right;
+  font-size: 23px;
+  font-weight: 700;
+  text-shadow: 0 1px 1px #9c1421;
+  width: 57%;
+  line-height: 1.3;
+  margin: 69px 5px;
+}
+
+.intro-messages ul {
+  list-style: none;
+  font-size: 23px;  
+  width: 80%;
+  margin: 60px auto;
+}
+
+.intro-messages ul li {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.intro-messages p {
+  margin-left: 10px;
+  font-size: 14px;
+  padding-top: 2px;
+}
+
+.intro-messages .first-message p,
+.intro-messages .third-message p {
+  padding-top: 11px;
+}
+
+.intro-messages li span {
+  font-size: 45px;
+  color: #b31726;
+  float: left;
+  margin-right: 10px;
+  width: 55px;
+}
+
+.intro-action {
+  background: #f1f1f1;
+  min-height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+.login-nav {
+  border-bottom: 1px solid #d3d3d3;
+  overflow: hidden;
+}
+
+.login-nav a {
+  float: left;
+  width: 50%;
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login-nav a:first-child {
+  border-right: 1px solid #d3d3d3;
+}
+
+.intro-action h2 {
+  color: #231f20;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 21px;
+  margin: 60px 0 40px;
+}
+
+.intro-action form {
+  width: 70%;
+  margin: auto;
+}
+
+.forgot-password {
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+
+@media only screen 
+  and (min-width : 320px) 
+  and (max-width : 480px) {
+    
+    .intro-messages {
+      display: none;
+    }
+
+    .intro-action {
+      width: 100%;
+    }
+
+    .intro-action form  {
+      width: 100%;
+    }
+
+    .account-options .col-lg-6 {
+      width: 50%;
+      float: left;
+    }
+
+    .account-options .col-lg-6 a {
+      line-height: 44px;
+      font-size: 18px;
+    }
+
+    #registration-form-musician .pull-right {
+      float: none !important;
+      margin: 15px 0;
+    }
+
+}
+
+

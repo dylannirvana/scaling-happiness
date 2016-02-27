@@ -1,0 +1,22 @@
+<template name="projectsAll">
+<section id="content">
+  <div class="row mb10">
+
+  {{#each projects}}
+
+  
+    <div class="col-md-4 project-tile">
+      <div class="cover-image" style="background-image: url({{coverImage}})"></div>
+      <h3>{{title}}</h3>
+      <h6>by {{userName userId}}</h6>
+      <h4>Target goal: <strong>${{goalAmount}}</strong></h4>
+      <!-- <p>{{description}}</p> -->
+      <a class="btn-sm btn-info" id="{{_id}}" href="{{pathFor 'detailsProject'}}">View details</a>
+    </div><!-- end col-md-12 -->
+
+  
+  {{/each}}
+  
+  </div><!-- row -->
+</section>
+</template>

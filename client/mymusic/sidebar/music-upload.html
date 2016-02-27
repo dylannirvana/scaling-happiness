@@ -1,0 +1,69 @@
+<template name="MusicUpload-old">
+
+  <h4>Upload New Track</h4>
+  <form action class="row">
+    <div class="col-lg-8 col-md-8">
+
+      <section class="icon-field">
+        <input class="form-control" type="text" placeholder="Title" id="title" name="title"/>
+        <i class="fa fa-pencil"></i>
+      </section>
+
+      <section class="icon-field">
+        <input class="form-control" type="text" placeholder="Author" id="author" name="author"/>
+        <i class="fa fa-user"></i>
+      </section>
+
+      <section class="icon-field">
+        <textarea class="form-control" rows="4" type="text" id="description" placeholder="Description" name="description"></textarea>
+        <i class="fa fa-align-left"></i>
+      </section>
+
+      <section class="input-group">
+          <span class="input-group-btn">
+              <span class="btn btn-success btn-file">
+                  Select <input type="file" multiple>
+              </span>
+          </span>
+        <div class="icon-field">
+          <input type="text" class="form-control" readonly placeholder="No file chosen">
+          <i class="fa fa-file-audio-o"></i>
+        </div>
+      </section>
+
+      <section class="icon-field">
+        <input class="form-control" type="text" placeholder="Tags" name="tags"/>
+        <i class="fa fa-tags"></i>
+      </section>
+      <section>
+        <button class="btn btn-primary col-lg-12 col-md-12">UPLOAD</button>
+      </section>
+
+    </div>
+  </form>
+
+  <script>
+    $(document).on('change', '.btn-file :file', function() {
+      var input = $(this),
+          numFiles = input.get(0).files ? input.get(0).files.length : 1,
+          label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+      input.trigger('fileselect', [numFiles, label]);
+    });
+
+    $(document).ready( function() {
+      $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+
+        var input = $(this).parents('.input-group').find(':text'),
+            log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+        if( input.length ) {
+          input.val(log);
+        } else {
+          if( log ) alert(log);
+        }
+
+      });
+    });
+  </script>
+
+</template>

@@ -1,0 +1,65 @@
+form section {
+  margin-bottom: 15px;
+}
+
+
+.form-control {
+  border: 1px solid transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 8px 16px;
+  max-width: 100%;
+}
+
+.form-control:focus {
+  border-color: #c5dadd;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.upload-button {
+  background: url(/images/upload-button.png) no-repeat;
+  width: 183px;
+  height: 178px;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.upload-button input[type=file] {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-primary {
+  border-color: #2c3e50;
+}
+
+
+#hidden-form {
+  display: none;
+}
+
+a.fund-project-btn {
+  color: #fff;
+}
+
+#project-billing label {
+  display: block;
+}
+
+.project-tile {
+  margin-bottom: 25px;
+}
+
+.project-tile .cover-image {
+  height: 100px;
+  background-size: cover;
+}

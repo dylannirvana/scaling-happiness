@@ -1,0 +1,97 @@
+/*
+ *
+ * Right sidebar start
+ *
+ */
+.right-sidebar {
+  margin-top: 133px;
+}
+
+.right-sidebar .friend-list {
+  background: #2c3e50;
+}
+
+.friend-list li {
+  padding: 3px 6px 3px 35px;
+  position: relative;
+}
+
+.friend-list li:before {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 6px;
+  left: 15px;
+  border: 2px solid #32393f;
+  border-radius: 50%;
+}
+
+.friend-list li.active:before,
+.friend-list li.online-true:before {
+  background-color: #8cc152;
+}
+
+.friend-list li.unread a {
+  color: red;
+  animation: blink 1s steps(5, start) infinite;
+  -webkit-animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+.friend-list li.non-active:before,
+.friend-list li.online-false:before {
+  background-color: #f6bb42;
+}
+
+.post-chat-message button {
+  font-size: 11px;
+  padding: 2px;
+}
+
+.chat-popup {
+  position: absolute;
+  left: -300px;
+  width: 300px;
+  background: #2c3e50;
+  padding: 10px;
+  top: 0;
+  color: #eee;
+  display: none;
+}
+
+.chat-popup input {
+  padding: 5px;
+  width: 240px;
+}
+
+.chat-popup .messages {
+  padding: 5px;
+  height: 300px;
+  overflow-y: scroll;
+  margin: 10px 0;
+  width: 89%;
+  color: #222;
+  background: #fff;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.chat-popup .messages > .chat-message {
+  -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}

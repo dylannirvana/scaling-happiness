@@ -1,0 +1,18 @@
+<template name="playlistItem">
+<!-- 	<li class="playlist-item col-xs-10">
+		<span class="delete-pli"><i class="fa fa-trash-o"></i></span>
+		<a href="/music/me">
+			<span class="pli-desc"><b>{{track.title}}</b> {{track.author}}</span>
+		</a>
+	</li> -->
+	<li class="">
+		<a href="#">
+			<span class="delete-pli"><i class="fa fa-trash-o"></i></span>
+			<audio class="audio" src="{{track.url}}" preload="auto"></audio>
+			<span class="pli-desc">
+				<b class="track-title">{{track.title}}</b> 
+				<span class="track-singer">{{track.author}}</span>
+			</span>
+		</a>
+	</li>
+</template>

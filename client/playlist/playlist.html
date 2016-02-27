@@ -1,0 +1,13 @@
+<template name="Playlist">
+	{{#if isNoTracks}}
+		<li class="playlist-item col-xs-10">
+			<a>
+				<span class="pli-desc" style="margin-left: 20px"><b>No items</b></span>
+			</a>
+		</li>
+	{{else}}
+		{{#each tracks}}
+			{{> playlistItem }}
+		{{/each}}
+	{{/if}}
+</template>

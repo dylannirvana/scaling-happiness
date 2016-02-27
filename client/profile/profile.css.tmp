@@ -1,0 +1,34 @@
+img {
+  max-width: 100%;
+}
+
+.profile-image-edit {
+  margin-top: 50px;
+}
+
+.profile-image-edit img {
+  width: 100%;
+}
+
+.profile-side-menu {
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-side-menu li {
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-side-menu li a {
+  display: block;
+  padding: 10px;  
+}
+
+img.chat-photo {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin: 0 20px 10px 0;
+}

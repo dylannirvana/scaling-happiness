@@ -1,0 +1,9 @@
+<template name="profile">
+  <div class="text-editor new-post-editor clearfix">
+    {{> dashboard_textEditor }}
+    <button class="btn btn-primary pull-left" id="create-new-post">Post status update</button>
+    <a href="{{pathFor 'newSelfie'}}" class="btn pull-right btn-info">Take a selfie</a>
+  </div>
+
+  {{> profilePosts posts=posts }}
+</template>

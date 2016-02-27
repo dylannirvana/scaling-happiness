@@ -1,0 +1,22 @@
+<template name="Music">
+  <section id="content" class="table-layout">
+    <div class="tray tray-center music">
+      <div class="sortable">
+        {{#if tracks}}
+          {{#each tracks}}
+            {{> trackItem}}
+          {{/each}}
+        {{else}}
+          <div class="fail-message">
+            <span>No items</span>
+          </div>
+        {{/if}}
+        <div class="gap"></div>
+        <div class="gap"></div>
+        <div class="gap"></div>
+        <div class="gap"></div>
+      </div>
+    </div>
+    {{> MusicUpload}}
+  </section>
+</template>

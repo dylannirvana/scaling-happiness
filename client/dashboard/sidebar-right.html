@@ -1,0 +1,52 @@
+<template name="sidebarRight">
+  <!--right-sidebar start-->
+  <div class="right-sidebar col-md-2 pull-right">
+    {{> friendList connections=connections.accepted}}
+
+    {{#if connections.pending}}
+      <h5>Friend Requests</h5>
+      {{> friendList connections=connections.pending}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="friendList">
+  <ul class="friend-list">
+    {{#each connections}}
+      {{#with connectedUser}}
+        <li class="following-item {{status}} {{notification}}" data-friendid='{{_id}}'>
+           <a href="#" class="open-chat-window">
+            {{profile.name}}
+          </a>
+
+          {{#if connectionPending}}
+
+            <a href="#" class='btn btn-sm friend-reject'><i class="fa fa-times"></i></a>
+            <a href="#" class='btn btn-sm friend-approve'><i class="fa fa-check"></i></a>
+
+          {{else}}
+
+            <div class="chat-popup">
+              <a href="{{ pathFor 'profilePublic'}}">{{profile.name}}</a>
+              <div class="messages">
+                {{#each messages}}
+                <div class="chat-message">
+                  <img width="24" height="24" src="{{userPhoto}}">
+                  {{message}}
+                </div>
+                {{/each}}
+              </div>
+
+              <form class="post-chat-message" data-recipient="{{_id}}">
+                <input class="chat-input">
+                <button type="submit">send</button>
+              </form>
+            </div>
+
+          {{/if}}
+
+        </li>
+      {{/with}}
+    {{/each}}
+  </ul>
+</template>

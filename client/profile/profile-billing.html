@@ -1,0 +1,106 @@
+<template name="profileBilling">
+
+  <section id="content" class="profile-edit">
+  
+    <!-- begin: .tray-center -->
+    <div class="tray tray-center pv40 ph30 va-t posr animated-long col-md-12">
+      <div class="mw1100 center-block">
+
+        <h2 class="lh30 mt10 text-center">Billing information</h2>
+
+        <!-- begin: .admin-form -->
+        <div class="admin-form theme-primary">
+        {{#if currentUser.profile.paid}}
+
+          <h2>You paid for this account</h2>
+
+        {{else}}  
+          <div id="p1" class="">
+
+            <div class="panel-body bg-light">
+              <form id="profile-billing">
+                <!-- <div class="section-divider mb40" id="spy1">
+                  <span>update your info</span>
+                </div> -->
+                <!-- .section-divider -->
+
+                <!-- first/last name Inputs -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="alert alert-micro alert-border-left alert-info light alert-dismissable">
+                  {{#if currentUser.profile.paid}}                    
+                    <strong>Your</strong> card will be charged on mm/dd/yyyy
+                  {{else}}
+                    <strong>Upgrade</strong> for just $1 a year.
+                  {{/if}}
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 form-group">
+                    <div class="section">                      
+                      <label class="field prepend-icon block">
+                        <input type="text" name="name" id="name" class="form-control" data-stripe="name" placeholder="Your name" value="{{billing.name}}" required>                        
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- image/email  -->
+                <div class="row">
+                  <div class="col-md-9 form-group">
+                    <div class="section">
+                      <label class="field prepend-icon block">
+                        {{#if billing}}
+                          <input type="text" name="creditCard" id="creditCard" class="form-control" data-stripe="number"  placeholder="Credit Card number" value="**** **** **** {{billing.last4}}" required>
+                        {{else}}
+                          <input type="text" name="creditCard" id="creditCard" class="form-control" data-stripe="number"  placeholder="Credit Card number" required>
+                        {{/if}}                        
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="cvv" id="cvv" class="form-control" data-stripe="cvc" placeholder="CVV" required>
+                    <div class="section">
+                      <label class="field">
+                        
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="section">
+                      <label class="field">
+                        <input class="form-control" id="exp-month" data-stripe="exp-month" placeholder="MM" value="{{billing.exp_month}}" required>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="section">
+                      <label class="field">
+                        <input class="form-control" id="exp-year" data-stripe="exp-year" placeholder="YYYY" value="{{billing.exp_year}}" required>
+                      </label>
+                    </div>
+                  </div>
+                </div>                
+
+                <!-- end .form-body section -->
+                <div class="panel-footer text-right">
+                  <button type="submit" class="button btn-primary btn btn-block">Update</button>
+                </div>
+                <!-- end .form-footer section -->
+              </form>
+            </div>
+          </div>
+          {{/if}}
+        </div>
+        <!-- end: .admin-form -->
+
+      </div>
+    </div>
+    <!-- end: .tray-center -->
+
+
+  </section>
+
+
+</template>

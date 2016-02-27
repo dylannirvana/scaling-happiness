@@ -1,0 +1,48 @@
+<template name="playlistsAlbum">
+
+  <div class="album-list"> 
+    {{#if tracks}}
+      {{#each tracks}}
+        {{> trackItem}}
+      {{/each}}
+    {{else}}
+      <div class="fail-message">
+        <span>No items</span>
+      </div>
+    {{/if}}
+  </div>
+  
+ <!--  <ul class="row album-list">
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-1.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-2.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-3.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-4.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-5.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-6.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-1.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-2.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-3.png" alt=""/></a>
+    </li>
+    <li class="col-lg-6 col-md-6">
+      <a href="#"><img src="/images/album-4.png" alt=""/></a>
+    </li>
+  </ul> -->
+
+</template>

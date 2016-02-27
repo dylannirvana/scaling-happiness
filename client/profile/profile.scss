@@ -1,0 +1,251 @@
+/*
+ *
+ * Main content start
+ *
+ */
+
+  .new-post-editor button.btn,
+  .new-post-editor a.btn {
+    width: 50%;
+    border: none;
+  }
+
+ .text-editor {
+  margin-bottom: 25px;
+ }
+
+
+.text-editor-helper-buttons {
+  background: #ed3b4b;
+  line-height: 20px;
+  overflow: hidden;
+  font-size: 11px;
+  text-align: center;
+}
+
+.text-editor-helper-buttons a {
+  color: #fff;
+  float: left;
+  width: 25%;
+  border-right: 1px solid #f65550;
+}
+
+.comment {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.comment {
+
+  i.fa-trash, i.fa-pencil {
+    float: right;
+    padding-left: 5px;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+  }
+
+  &:hover {
+
+    i.fa-trash, i.fa-pencil {
+      display: block;
+    }
+  }
+
+}
+
+.comment:last-child {
+  margin-bottom: 0;
+}
+
+.comment > div {
+  margin-bottom: 8px;
+}
+
+.comment-info .user-photo {
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.comment-info .user-name {
+  font-weight: bold;
+}
+
+.comment-info .time-stamp {
+  text-transform: uppercase;
+  color: #999;
+  font-size: 80%;
+}
+
+.comment-body img {
+  float: left;
+  max-width: 50%;
+  margin-right: 25px;
+}
+
+#comment-text-area {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+#comment-text-area .fa-close {
+  position: absolute;
+  right: -13px;
+  top: 0;
+  cursor: pointer;
+}
+
+#comment-text-area .froala-box {
+  width: 100%;
+}
+
+#create-new-comment {
+  margin-right: 23px;
+}
+
+.links a {
+  padding-right: 14px;
+}
+
+.reply-list {
+  padding: 10px 15px 10px 60px;
+  background: #eee;
+}
+
+.reply {
+  margin-bottom: 25px;
+}
+
+.reply:last-child {
+  margin-bottom: 0;
+}
+
+.user-panel img {
+  width: 100%;
+}
+
+.user-panel .user-name {
+  font-weight: bold;
+  text-align: center;
+}
+
+.user-menu li {
+  border-top: 1px solid #eeefef;
+  border-bottom: 1px solid #eceded;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  -ms-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
+}
+
+.user-menu li:first-child {
+  border-top: 0;
+}
+
+.user-menu li:last-child {
+  border-bottom: 0;
+}
+
+.user-menu li a {
+  display: block;
+  padding: 5px 10px;
+  font-size: 1.5em;
+}
+
+.user-menu li:hover {
+  background: #eee;
+}
+
+li.diary-musician {
+  display: none;
+}
+
+.follow-buttons {
+  overflow: hidden;
+}
+
+.content-inner .follow-buttons .btn {
+  color: #fff;
+  width: 50%;
+  float: left;
+  margin: 0;
+
+  &#add-user, &#remove-user{
+    background: #ed3b4b;
+    border: 1px solid #ed3b4b;
+  }
+
+  &#pending-request{
+    cursor: pointer;
+  }
+}
+
+.profile-bio h2 {
+  margin-bottom: 25px;
+}
+
+.form-group.checkbox {
+  clear: both;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.public-bio .row {
+  margin-bottom: 25px;
+}
+
+
+.new-diary-editor .froala-view {
+  height: 500px;
+  background-image: -webkit-linear-gradient(white, white 34px, #eee 34px, #eee 35px, white 35px);
+  background-image: -moz-linear-gradient(white, white 34px, #eee 34px, #eee 35px, white 35px);
+  background-image: -ms-linear-gradient(white, white 34px, #eee 34px, #eee 35px, white 35px);
+  background-image: -o-linear-gradient(white, white 34px, #eee 34px, #eee 35px, white 35px);
+  background-image: linear-gradient(white, white 34px, #eee 34px, #eee 35px, white 35px);
+  background-size: 100% 35px;
+  border: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.new-diary-editor .froala-view p {
+  margin: 0;
+  line-height: 34px;
+  margin-bottom: 1px;
+}
+
+.diary-buttons button,
+.diary-buttons a.btn-info {
+  width: 50%;
+  border: none;
+}
+
+.diary-nav {
+  overflow: hidden;
+}
+
+.diary-nav a {
+  font-size: 30px;
+}
+
+.diary-nav a.next {
+  float: right;
+}
+
+.diary-nav a.prev {
+  float: left;
+}
+
+.diary-nav h3 {
+  display: inline-block;
+  text-align: center;
+  margin: 10px auto;
+  width: 82%;
+}

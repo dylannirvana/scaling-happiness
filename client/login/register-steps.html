@@ -1,0 +1,256 @@
+<template name="register3">
+
+  <!-- multistep form -->
+<form id="msform">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Account Setup</li>
+    <li>Social Profiles</li>
+    <li>Personal Details</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Create your account</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
+    <input type="text" name="email" placeholder="Email" />
+    <input type="password" name="pass" placeholder="Password" />
+    <input type="password" name="cpass" placeholder="Confirm Password" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Social Profiles</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+    <input type="text" name="twitter" placeholder="Twitter" />
+    <input type="text" name="facebook" placeholder="Facebook" />
+    <input type="text" name="gplus" placeholder="Google Plus" />
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">We will never sell it</h3>
+    <input type="text" name="fname" placeholder="First Name" />
+    <input type="text" name="lname" placeholder="Last Name" />
+    <input type="text" name="phone" placeholder="Phone" />
+    <textarea name="address" placeholder="Address"></textarea>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+</form>
+
+</template>
+
+<template name="register-steps">
+
+<!-- Start: Main -->
+    <div id="main" class="animated fadeIn external-page sb-l-c sb-r-c registration-page">
+
+        <!-- Start: Content-Wrapper -->
+        <section id="content_wrapper">
+
+            <!-- Begin: Content -->
+            <section id="content" class="">
+
+                <div class="admin-form theme-info">
+
+                    <div class="panel panel-info mt10 br-n">
+
+                        <form method="post" action="/" id="registration-form">
+                          
+                          <ul id="progressbar">
+                            <li class="active">Your info</li>
+                            <li>Account type</li>
+                            <li>Personal Details</li>
+                          </ul>
+
+                          
+                            <fieldset>
+                              <h2 class="fs-title">Create your account</h2>
+                              <h3 class="fs-subtitle">This is step 1</h3>
+                              
+                              <div class="section row">
+                                    <div class="col-md-6">
+                                        <label for="firstname" class="field prepend-icon">
+                                            <input type="text" name="first-name" id="first-name" class="gui-input" placeholder="First name" required>
+                                            <label for="firstname" class="field-icon"><i class="fa fa-user"></i>
+                                            </label>
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+
+                                    <div class="col-md-6">
+                                        <label for="lastname" class="field prepend-icon">
+                                            <input type="text" name="last-name" id="last-name" class="gui-input" placeholder="Last name" required>
+                                            <label for="lastname" class="field-icon"><i class="fa fa-user"></i>
+                                            </label>
+                                        </label>
+                                    </div>
+                                    <!-- end section -->
+                                </div>
+                                <!-- end .section row section -->
+
+                                <div class="section">
+                                    <label for="email" class="field prepend-icon">
+                                        <input type="email" name="email" id="email" class="gui-input" placeholder="Email address" required>
+                                        <label for="email" class="field-icon"><i class="fa fa-envelope"></i>
+                                        </label>
+                                    </label>
+                                </div>
+                                <!-- end section -->
+
+
+                                <div class="section">
+                                    <label for="password" class="field prepend-icon">
+                                        <input type="password" name="password" id="password" class="gui-input" placeholder="Create a password" required>
+                                        <label for="password" class="field-icon"><i class="fa fa-unlock-alt"></i>
+                                        </label>
+                                    </label>
+                                </div>
+                                <!-- end section -->
+
+                                <div class="section">
+                                    <label for="confirmPassword" class="field prepend-icon">
+                                        <input type="password" name="confirm-password" id="confirm-password" class="gui-input" placeholder="Retype your password" required>
+                                        <label for="confirmPassword" class="field-icon"><i class="fa fa-lock"></i>
+                                        </label>
+                                    </label>
+                                </div>
+                                <!-- end section -->
+
+                              <input type="button" name="next" class="next action-button" value="Next" />
+                            </fieldset>
+
+
+                            <fieldset id="account-type-fieldset">
+                              <h2 class="fs-title">Account type</h2>
+                              <h3 class="fs-subtitle">This is step 2</h3>
+                              <div class="section mb15">
+                                  <div class="radio-custom radio-primary mb5">
+                                      <input type="radio" id="free" name="account" value="free" checked>
+                                      <label for="free">Fan Account</label>
+                                  </div>
+                                  <div class="radio-custom radio-primary mb5">
+                                      <input type="radio" id="musician" name="account" value="musician">
+                                      <label for="musician">Singer or Band</label>
+                                  </div>
+                              </div>
+                              <!-- end section -->
+                              <input type="button" name="previous" class="previous action-button" value="Previous" />
+                              <input type="button" name="next" class="next-final action-button" value="Next" />
+
+                            </fieldset>
+
+
+                            <fieldset id="user-details">
+                              <h2 class="fs-title">Personal Details</h2>
+                              <h3 class="fs-subtitle">This is step 3</h3>
+                              
+                              <div class="section clearfix">
+                                  <div class="radio-custom radio-primary col-lg-6">
+                                      <input type="radio" id="male" name="gender" value="male" checked>
+                                      <label for="male">Male</label>
+                                  </div>
+                                  <div class="radio-custom radio-primary col-lg-6">
+                                      <input type="radio" id="female" name="gender" value="female">
+                                      <label for="female">Female</label>
+                                  </div>
+                              </div>
+
+                              <div class="section clearfix">
+                                <div class="form-group">
+                                  <label for="dob-input" class="col-lg-3 control-label">DOB</label>
+                                  <div class="col-lg-9">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                      <input type="text" id="dob-input" name="dob-input" class="form-control date" maxlength="10" autocomplete="off" placeholder="MM/DD/YYYY">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="section clearfix">  
+                                <div class="form-group">
+                                  <label for="country" class="col-lg-3 control-label">Country</label>
+                                  <div class="col-lg-9">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                                      {{> countryList}}                             
+                                    </div>  
+                                  </div>
+                                </div>
+
+                              </div><!-- section -->
+
+
+                              <input type="button" name="previous" class="previous-final action-button" value="Previous" />
+                              <input type="submit" name="submit" class="submit action-button" value="Submit" />
+
+                            </fieldset>
+
+
+                            <fieldset id="band-details">
+                              <h2 class="fs-title">Band Details</h2>
+                              <h3 class="fs-subtitle">This is step 3</h3>
+                              
+                              <div class="section clearfix">
+                                <div class="form-group">
+                                  <label for="dob-input" class="col-lg-3 control-label">Website</label>
+                                  <div class="col-lg-9">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-desktop"></i></span>
+                                      <input type="text" id="website" name="website" class="form-control" placeholder="http://">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="section clearfix">
+                                <div class="form-group">
+                                  <label for="dob-input" class="col-lg-3 control-label">Phone</label>
+                                  <div class="col-lg-9">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                      <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone number">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="section clearfix">  
+                                <div class="form-group">
+                                  <label for="country" class="col-lg-3 control-label">Country</label>
+                                  <div class="col-lg-9">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                                      {{> countryList}}                             
+                                    </div>  
+                                  </div>
+                                </div>
+
+                              </div><!-- section -->
+
+
+                              <input type="button" name="previous" class="previous-final action-button" value="Previous" />
+                              <input type="submit" name="submit" class="submit action-button" value="Submit" />
+
+                            </fieldset>
+                          
+                            
+                                
+
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+            <!-- End: Content -->
+
+        </section>
+        <!-- End: Content-Wrapper -->
+
+    </div>
+    <!-- End: Main -->
+
+
+
+</template>   

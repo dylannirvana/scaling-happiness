@@ -1,0 +1,104 @@
+<template name="projectDetails">
+
+  <div class="project-details">
+    <img src="{{coverImage}}">
+    <h1>{{title}}</h1>
+    <h4>Goal: $<strong>{{goalAmount}}</strong></h4>
+    <h4>Raised: $<strong>{{currentAmount}}</strong></h4>
+    <p>description: <strong>{{description}}</strong></p>
+
+    {{# if isMyProject}}
+      <a href="#" id="delete-project" class="btn btn-danger">Delete project</a>
+    {{else}}
+      <a href="#" class="btn btn-primary btn-block fund-project-btn">Back this project</a>
+    {{/if}}
+
+  </div>  
+
+
+       <div id="hidden-form">
+        <!-- begin: .admin-form -->
+        <div class="admin-form theme-primary">
+
+          <h2>Thanks for funding this project</h2>
+          <div id="p1" class="project-credit-card">
+
+            <div class="panel-body bg-light">
+              <form id="project-billing">
+                <div class="section-divider mb40" id="spy1">
+                  <span>enter payment info</span>
+                </div>
+                <!-- .section-divider -->
+
+                <!-- first/last name Inputs -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="section">                      
+                      <label class="field prepend-icon">
+                        <input type="text" name="name" id="name" class="form-control" data-stripe="name" placeholder="Your name" value="{{billing.name}}" required>
+                        <!-- <label for="firstname" class="field-icon"><i class="fa fa-user"></i></label> -->
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="section">                      
+                      <label class="field prepend-icon">
+                        <input type="text" name="amount" id="amount" class="form-control" placeholder="Amount $" required>
+                        <!-- <label for="amount" class="field-icon"><i class="fa fa-dollar"></i></label> -->
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- image/email  -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="section">
+                      <label class="field prepend-icon">
+                          <input type="text" name="creditCard" id="creditCard" class="form-control" data-stripe="number"  placeholder="Credit Card" required>
+                        <!-- <label for="email" class="field-icon"><i class="fa fa-credit-card"></i></label> -->
+                      </label>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-md-4">
+                    <div class="section">
+                      <label class="field">
+                        <input type="text" name="cvv" id="cvv" class="form-control" data-stripe="cvc" placeholder="CVV" required>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="section">
+                      <label class="field">
+                        <input class="form-control" id="exp-month" data-stripe="exp-month" placeholder="MM" required>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="section">
+                      <label class="field">
+                        <input class="form-control" id="exp-year" data-stripe="exp-year" placeholder="YYYY" required>
+                      </label>
+                    </div>
+                  </div>
+                </div>                
+
+                <!-- end .form-body section -->
+                <div class="panel-footer text-right">
+                  <button type="submit" class="button btn-primary">Update</button>
+                </div>
+                <!-- end .form-footer section -->
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end: .admin-form -->
+
+      </div><!-- hidden-form -->
+
+
+ 
+</template>

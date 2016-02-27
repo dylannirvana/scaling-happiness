@@ -1,0 +1,54 @@
+<template name="registerFan">
+  <form method="post" action="/" id="registration-form-fan">
+  
+    <h2>Register new account</h2>
+
+    <div class="row account-options">
+      <div class="col-lg-6">
+        <a href="{{ pathFor 'registerfan' }}" class="btn btn-xs btn-info active btn-block">I'm a member</a>
+      </div>
+      <div class="col-lg-6">
+        <a href="{{ pathFor 'registermusician' }}" class="btn btn-xs btn-info btn-block">I'm a musician</a>
+      </div>
+    </div>
+
+
+    <div class="form-group clearfix">
+      <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First name" required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last name" required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required>
+    </div>
+
+    <div class="form-group">
+      {{>countryList}}
+    </div>
+
+    <div class="form-group">
+      <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+    </div>
+
+    <div class="form-group">
+      <input type="password" name="repeat_password" id="repeat_password" class="form-control" placeholder="Repeat Password" required>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" name="read-terms" id="read-terms" required>
+      <label><a href="{{pathFor 'publicTerms'}}">I read terms and conditions</a></label>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" id="registration-fan-submit" class="btn btn-block btn-primary" value="Create account">
+    </div>
+
+    <div class="forgot-password clearfix">
+      <a href="{{pathFor 'login'}}" class="dark">Have account? Login here</a>
+    </div>
+
+  </form>
+</template>

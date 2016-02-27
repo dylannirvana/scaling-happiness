@@ -1,0 +1,26 @@
+<template name="myMusicPlaylist">
+
+<ul class="playlist" id="my-playlist">
+  
+  {{#each tracks}}
+    <li class="playlist-item-wrapper" data-playlist="MyPlaylistItems">{{>playlistItem}}</li>
+  {{/each}}
+
+  {{#if isNoTracks}}
+    Drop songs here
+  {{/if}}
+
+<!--   <li><a href="#">ATB ft.Sean Ryan - When It Ends It Sta...</a></li>
+  <li><a href="#">ATB ft. JES - Together</a></li>
+  <li><a class="active" href="#">Avicii - Addicted yo you</a></li>
+  <li><a href="#">Avicii - Levels</a></li>
+  <li><a href="#">Linkin Park - Numb</a></li>
+  <li><a href="#">Linkin Park - In the End</a></li>
+  <li><a href="#">Lady Gaga - Poker Face</a></li>
+  <li><a href="#">Lady Gaga - Bad Romance</a></li>
+  <li><a href="#">Katy Perry - Firework</a></li>
+  <li><a href="#">Jay Z - Holy Grail</a></li> -->
+
+</ul>
+
+</template>

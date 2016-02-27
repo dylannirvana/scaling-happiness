@@ -1,0 +1,34 @@
+<template name="chat">
+
+Chat with {{user.profile.name}}
+  <div class="text-editor new-post-editor">
+    {{> froalaReactive inlineMode=false buttons=buttons }}
+    <button class="btn btn-primary" id="create-new-chat-msg">Post</button>
+  </div>  
+
+  <div>
+    
+    <!--comment-list start-->
+<ul class="comment-list">
+  <!--comment start-->
+  {{#each messages}}
+    <li class="comment chat-comment {{guestClassName senderId}}">
+    <div class="comment-info clearfix">
+      <div class="pull-left user-photo">
+        <img src="{{postUserPhoto senderId}}" alt=""/>
+      </div>
+      <div class="pull-left"> 
+        <div class="user-name">{{postUserName senderId}} posted</div>       
+        <div class="time-stamp">posted on {{postedOnFormatted createdAt}}</div>
+      </div>
+    </div>
+    <div class="chat-body clearfix">
+      {{{message}}}
+    </div>
+    </li>
+  {{/each}}
+
+</ul>
+  </div>
+
+</template>

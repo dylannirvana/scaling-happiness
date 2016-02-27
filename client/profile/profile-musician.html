@@ -1,0 +1,85 @@
+<template name="profileMusician">
+  <div class="profile-page">
+    <!-- Start: Topbar-Dropdown -->
+    <div id="topbar-dropmenu">
+      <div class="topbar-menu row">
+        <div class="col-xs-4 col-sm-2">
+          <a href="#" class="metro-tile bg-success">
+            <span class="metro-icon glyphicons glyphicons-inbox"></span>
+            <p class="metro-title">Messages</p>
+          </a>
+        </div>
+        <div class="col-xs-4 col-sm-2">
+          <a href="#" class="metro-tile bg-info">
+            <span class="metro-icon glyphicons glyphicons-parents"></span>
+            <p class="metro-title">Users</p>
+          </a>
+        </div>
+        <div class="col-xs-4 col-sm-2">
+          <a href="#" class="metro-tile bg-alert">
+            <span class="metro-icon glyphicons glyphicons-headset"></span>
+            <p class="metro-title">Support</p>
+          </a>
+        </div>
+        <div class="col-xs-4 col-sm-2">
+          <a href="#" class="metro-tile bg-primary">
+            <span class="metro-icon glyphicons glyphicons-cogwheels"></span>
+            <p class="metro-title">Settings</p>
+          </a>
+        </div>
+        <div class="col-xs-4 col-sm-2">
+          <a href="#" class="metro-tile bg-warning">
+            <span class="metro-icon glyphicons glyphicons-facetime_video"></span>
+            <p class="metro-title">Videos</p>
+          </a>
+        </div>
+        <div class="col-xs-4 col-sm-2">
+          <a href="#" class="metro-tile bg-system">
+            <span class="metro-icon glyphicons glyphicons-picture"></span>
+            <p class="metro-title">Pictures</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End: Topbar-Dropdown -->
+
+
+
+    <!-- Begin: Content -->
+    <section id="content" class="pn animated fadeIn">
+
+      <!-- <div class="p40 bg-background bg-topbar bg-psuedo-tp"> -->
+      <div class="pv30 ph40 bg-light dark br-b br-grey posr">
+        <div class="btn-group profile-settings-btn">
+          <button type="button" class="btn btn-default dropdown-toggle pl20" data-toggle="dropdown">Account
+            <span class="caret ml5"></span>
+          </button>
+          <ul class="dropdown-menu pull-right" role="menu">
+            <li>
+              <a href="{{pathFor 'profileEdit'}}">Edit</a>
+              <a href="{{pathFor 'profileBilling'}}">Billing</a>
+              <a href="{{pathFor 'profilePublic' _id=currentUser._id}}">Public profile</a>
+            </li>
+          </ul>
+        </div>
+        {{#with currentUser.profile}}
+        <div class="table-layout">
+          <div class="w200 text-center pr30 hidden-xs">
+            <img src="{{photo}}" class="responsive">
+          </div>
+          <div class="va-t m30">
+            <h2 class="">{{currentUser.profile.name}}</h2>
+            <p class="fs15 mb20">{{currentUser.profile.bio}}</p>
+          </div>
+        </div>
+        {{/with}}
+      </div>
+
+    </section>
+    <!-- End: Content -->
+
+
+
+  </div>
+
+</template>

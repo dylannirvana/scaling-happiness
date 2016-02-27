@@ -1,0 +1,96 @@
+<template name="profileSidebar">
+<div class="col-lg-4 col-md-4 pull-right user-sidebar-col">
+
+  <!--user-panel start-->
+  <div class="user-panel">
+    <div class="user-photo">
+      {{#if isPublic}}
+        <img src="{{user.profile.photo}}" alt=""/>
+      {{else}}
+        <a href="{{pathFor 'profileEdit'}}">
+          <img src="{{user.profile.photo}}" alt=""/>
+        </a>
+      {{/if}}
+
+    </div>
+    <div class="user-name text-center">
+      {{user.profile.name}}
+    </div>
+
+    {{#if isPublic}}
+      <ul class="user-menu">
+        <li><a href="{{pathFor 'publicBio' _id=publicUser._id}}">Bio</a></li>
+        <li><a href="{{pathFor 'publicSelfies' _id=publicUser._id}}">Selfies</a></li>
+
+         {{#if isPublicMusician user}}
+          <li><a href="{{pathFor 'publicEvents' _id=publicUser._id}}">Calendar</a></li>
+          <li><a href="{{pathFor 'playlistPublic.album' _id=publicUser._id}}">Playlist Album</a></li>
+        {{/if}}
+
+        <li><a href="{{pathFor 'publicPicures' _id=publicUser._id}}">Picture Album</a></li>
+        <li><a href="{{pathFor 'publicVideos' _id=publicUser._id}}">Video Album</a></li>
+
+      </ul>
+
+      {{#if isNotMe}}
+
+        <div class="follow-buttons">
+
+        {{#if isFollowing}}
+        <a href="#" id="unfollow" class="btn btn-primary">Unfollow</a>
+        {{else}}
+          <a href="#" id="follow" class="btn btn-block btn-primary">Follow</a>
+        {{/if}}
+
+        {{#if canFollow}}
+
+          {{#if connectionExists }}
+            {{#if approved}}
+              <a href="#" id="remove-user" class="btn btn-block btn-info">Remove</a>
+            {{else}}
+              {{#if pending}}
+                <a href="#" id="pending-request" class="btn btn-block btn-warning">Pending</a>
+              {{/if}}
+            {{/if}}
+          {{else}}
+            <a href="#" id="add-user" class="btn btn-block btn-info">Add</a>
+          {{/if}}
+        {{/if}}
+
+        </div>
+      {{/if}}
+
+    {{else}}
+
+    <ul class="user-menu">
+      <li><a href="{{pathFor 'profileBio' }}">Bio</a></li>
+
+      {{#if isNotMusician}}
+        <li><a href="{{pathFor 'profileDiary'}}">Diary</a></li>
+      {{/if}}
+      <li><a href="{{pathFor 'profileSelfies'}}">Selfies</a></li>
+
+      {{#if isMusician}}
+        <li><a href="{{pathFor 'profileEvents'}}">Calendar</a></li>
+      {{/if}}
+
+      <li><a href="{{pathFor 'pictureAlbum'}}">Picture Album</a></li>
+      <li><a href="{{pathFor 'videoAlbum'}}">Video Album</a></li>
+
+      {{#if isMusician}}
+        <li><a href="{{pathFor 'playlist.album'}}">Playlist Album</a></li>
+      {{/if}}
+
+      {{#if isMusician}}
+        <li><a href="{{pathFor 'musicNew'}}">Upload a song</a></li>
+      {{/if}}
+    </ul>
+    {{/if}}
+
+
+  </div>
+  <!--user-panel end-->
+
+</div>
+
+</template>

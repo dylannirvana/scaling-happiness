@@ -1,0 +1,48 @@
+<template name="loginLayout">
+
+	{{> flashMessages}}
+  
+  <!-- Start: Main -->
+    <div id="main" class="login intro-pages">
+
+      <div class="row">
+
+        <section class="intro-messages col-lg-6">
+          
+          <div class="intro">
+            <img src="/images/logo-245.png" class="logo">          
+            <h1>Where artists and fans unlock the treasures of the musical world.</h1>
+          </div>
+          
+          <ul>
+            <li class="first-message">
+              <span class="fa fa-globe"></span>
+              <p>Listen to your favorite music while you chat with  your friends</p>
+            </li>
+            <li class="second-message">
+              <span class="fa fa-music"></span>
+              <p>Compose your diary with pictures and videos</p>
+            </li>
+            <li class="third-message">
+              <span class="fa fa-bank"></span>
+              <p>Calendar your musical life</p>
+            </li>
+          </ul>
+        </section>
+
+
+        <section class="intro-action col-lg-6">
+          <!-- <nav class="login-nav">
+            <a class="dark" href="{{ pathFor 'login' }}">Login</a>
+            <a class="dark" href="{{ pathFor 'registerfan' }}">Register</a>
+          </nav> -->
+            {{> yield}}
+        </section>
+
+      </div><!-- row -->
+
+    </div>
+    <!-- End: Main -->
+	
+	
+</template>

@@ -1,0 +1,150 @@
+.track-item {
+  /*width: 215px;*/
+  /*height: 275px;*/
+  display: inline-block;
+  margin-right: 3px;
+  position: relative;
+}
+
+.cover-container {
+	display: block;
+  position: relative;
+}
+
+
+.track-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  margin: auto;
+}
+
+
+.track-item > div {
+  height: inherit;
+  width: inherit;
+}
+
+.track-item .row {  
+  bottom: 0;
+  left: 0;
+  height: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+.track-item i.fa {
+  margin-right: 5px;
+  font-size: 10pt;
+}
+
+.item-player, .player-controls {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.track-item button.btn-danger.btn-xs {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  top: 7px;
+  right: 8px;
+  z-index: 22;
+  opacity: 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.track-item:hover button.btn-danger.btn-xs {
+  opacity: 1;
+}
+/*
+.cover-container:hover img {
+  filter: brightness(40%);
+  -webkit-filter: brightness(40%);
+  -moz-filter: brightness(40%);
+  -o-filter: brightness(40%);
+  -ms-filter: brightness(40%);
+}*/
+
+.cover-container:hover .item-player, .cover-container:hover .player-controls {
+  opacity: 0.95;
+}
+
+div[data-isplaying="true"] .item-player, div[data-isplaying="true"] .player-controls {
+  opacity: 0.95;
+}
+
+.active-player {
+  opacity: 0.9;
+}
+
+.item-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.player-controls {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  left: 0;
+  right: 0;
+}
+
+.player-controls button i.fa {
+  margin-right: 0;
+  font-size: 13pt;
+  line-height: 13pt;
+  padding: 0;
+}
+
+.item-player .line {
+  height: 100%;
+  background-color: rgba(227, 227, 227, 0.2);
+}
+
+.cursor {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+
+/*////////////////////////////////////////////////////////////////*/
+
+.track-item.ui-draggable-dragging {
+  height: 40px !important;
+}
+
+.track-item.ui-draggable-dragging button, .track-item.ui-draggable-dragging i, .track-item.ui-draggable-dragging .cover-container {
+  display: none !important;
+}
+
+.track-item.ui-draggable-dragging .panel.p6.pbn {
+  padding: 0px !important;
+  margin: 0 !important;
+}
+
+.track-item.ui-draggable-dragging .row.table-layout {
+  height: 36px !important;
+}
+
+.track-item.ui-draggable-dragging h6, .track-item.ui-draggable-dragging h7 {
+  display: inline !important;
+}
+
+.spinner {
+  left: 50% !important;
+  top: 36% !important;
+}

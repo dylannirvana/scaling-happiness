@@ -1,0 +1,15 @@
+li.following-item{
+  clear: both;
+  a.btn-sm{
+    float: right;
+    margin: 0px 2px;
+    padding: 0px 5px;
+
+    &.friend-reject{
+      background: #ed3b4b;
+    }
+    &.friend-approve{
+      background: #6c6
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.chat-body {
+  background: #7f8c8d;
+  color: #fff;
+  padding: 5px 10px 0 10px;
+  border-radius: 10px;
+  width: 60%;
+}
+
+.chat-comment {
+  clear: both;
+}
+
+.my-comment {
+  float: right;
+}
+
+.my-comment .chat-body {
+  background: #2c3e50;
+  color: #fff;
+}

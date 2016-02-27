@@ -1,0 +1,8 @@
+<template name="profilePublic">
+  <div class="text-editor new-post-editor">
+    {{> dashboard_textEditor }}
+    <button class="btn btn-primary" id="create-new-post">Post status update</button>
+  </div>
+
+  {{> profilePosts posts=posts }}
+</template>

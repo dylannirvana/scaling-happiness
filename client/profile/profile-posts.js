@@ -32,6 +32,7 @@ Template.profilePosts.events({
 
   'click .delete-post': function() {
     var postId = this._id;
+    // console.log(postId) This showed the post id
     if(confirm('Are you sure you want to delete this update?')) {
       Posts.remove(postId);
     }

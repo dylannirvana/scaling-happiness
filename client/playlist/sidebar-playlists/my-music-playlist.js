@@ -24,7 +24,7 @@ Template.myMusicPlaylist.onRendered(function() {
   $(".playlist#my-playlist").droppable({
     drop: function(event, ui) {
       var trackId = Blaze.getData(ui.draggable[0])._id;
-      
+
       console.log(instance.mainPls.get());
       console.log(instance);
 

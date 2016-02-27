@@ -24,7 +24,8 @@ a.Editable.DEFAULTS=a.extend(a.Editable.DEFAULTS,{
   fileDeleteUrl:null,
   fileDeleteParams:{},
   fileUploadParams:{},
-  fileUploadURL:"https://gatekeymusic.s3.amazonaws.com",
+  // fileUploadURL:"https://gatekeymusic.s3.amazonaws.com",
+  fileUploadURL:"",
   fileUploadParam: "file",
   maxFileSize:209715200, // 200 mb
   useFileName:!0,
@@ -133,7 +134,7 @@ a.Editable.prototype.fileUploadHTML=function(){
             b.$file_progress_bar.show(),
             b.$file_progress_bar.find("span").css("width","100%").text("Please wait!"),
             b.showFileUpload(),c.submit()
-        } 
+        }
         a(this).val("")
       }),
 
@@ -159,15 +160,15 @@ a.Editable.prototype.fileUploadHTML=function(){
       console.log('uploadVideo');
       console.log(this);
       var file = b[0];
-      
+
       var payloadData = function() {
         var fd = new FormData();
-        var key = "data/" + (new Date).getTime()+ '-' + file.name;  
+        var key = "data/" + (new Date).getTime()+ '-' + file.name;
         console.log(c);
-        fd.append('acl', 'public-read'); 
+        fd.append('acl', 'public-read');
         fd.append('AWSAccessKeyId', 'AKIAJI7JFFBN3FHM6LOQ');
         fd.append('policy', Session.get('awsBase').s3Policy);
-        fd.append('signature',Session.get('awsBase').s3Signature);          
+        fd.append('signature',Session.get('awsBase').s3Signature);
         fd.append('success_action_status', '201');
         fd.append('X-Requested-With', 'xhr');
         fd.append('Content-Type', file.type);
@@ -180,7 +181,7 @@ a.Editable.prototype.fileUploadHTML=function(){
       var createCORSRequestt = function createCORSRequestt(a,b){
         var c = new XMLHttpRequest;
         //console.log(file);
-        
+
 
 
         c.open('POST','https://gatekeymusic.s3.amazonaws.com',true);
@@ -192,7 +193,7 @@ a.Editable.prototype.fileUploadHTML=function(){
         //   // this.options.withCredentials && (c.withCredentials = !0);
         //   // for(var d in this.options.headers) {
         //   //   c.setRequestHeader(d,this.options.headers[d])
-        //   // } 
+        //   // }
         //   c.send(fd);
         // } else {
         //   "undefined"!=typeof XDomainRequest?(c=new XDomainRequest,c.open(a,b)):c=null;
@@ -218,13 +219,13 @@ a.Editable.prototype.fileUploadHTML=function(){
           // if(this.options.crossDomain)e=this.createCORSRequest("POST",this.options.fileUploadURL);
           // else{e=new XMLHttpRequest,e.open("POST",this.options.fileUploadURL);
 
-          //   for(var f in this.options.headers) {  
+          //   for(var f in this.options.headers) {
           //     e.setRequestHeader(f,this.options.headers[f])
           //   }
           // }
-        
 
-        e = createCORSRequestt("POST",this.options.fileUploadURL);  
+
+        e = createCORSRequestt("POST",this.options.fileUploadURL);
         console.log(e);
         var g = b[0].name; // file name
 
@@ -251,12 +252,12 @@ a.Editable.prototype.fileUploadHTML=function(){
           this.$file_progress_bar.hide();
           this.restoreSelectionByMarkers()
           this.focus()
-          this.insertHTML('<p> </p><video display: block; margin-top: 10px;" src="'+url+'" controls>your browser doesnt support html5 video</video>')          
+          this.insertHTML('<p> </p><video display: block; margin-top: 10px;" src="'+url+'" controls>your browser doesnt support html5 video</video>')
           this.hide()
           this.hideFileLoader()
           this.$file_progress_bar.hide();
           this.triggerEvent("fileUploaded",[])
-          
+
           Videos.insert({
             url: url
           });
@@ -300,7 +301,7 @@ a.Editable.prototype.fileUploadHTML=function(){
         if(!this.triggerEvent("afterFileUpload",[b],!1))return!1;
         var d=a.parseJSON(b);
         d.link?this.writeFile(d.link,c,b):d.error?this.throwFileErrorWithMessage(d.error):this.throwFileError(2)
-      } catch(e) { 
+      } catch(e) {
         this.throwFileError(4)}
     },
 
@@ -316,8 +317,3 @@ a.Editable.prototype.fileUploadHTML=function(){
     }
 
   }(jQuery);
-
-
-
-
-

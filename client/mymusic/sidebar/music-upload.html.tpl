@@ -1,4 +1,7 @@
-<template name="MusicUpload">
+<template name="MusicUpload2">
+
+	<!-- Made this template inactive -->
+
 <aside class="tray tray-right tray320" data-tray-height="match" style="height: 550px;">
 	<h4 class="tray-title"> Upload New Track </h4>
 	<!-- Image Upload Field -->
@@ -72,7 +75,7 @@
 			<div class="col-xs-12">
 				<button id="upload-submit" type="button" class="btn btn-info col-xs-12">
 				<span class="fa fa-cloud-upload"></span>
-				Submit
+				Submit it
 				</button>
 			</div>
 		</div>

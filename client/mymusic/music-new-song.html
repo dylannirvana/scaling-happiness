@@ -1,11 +1,13 @@
-<template name="MusicUpload">
+<template name="MusicUpload3">
+
+  <!-- Made this template inactive -->
 
 {{#if isFan}}
   <div class="alert alert-warning">
     Please <a href="{{pathFor 'profileBilling'}}">upgrade your account</a> in order to uplaod songs
   </div>
 {{else}}
-  <h4>Upload New Track</h4>
+  <h4>Upload Crazy New Track</h4>
   <form class="row" id="new-song-form">
     <div class="col-lg-8 col-md-8">
 
@@ -45,7 +47,7 @@
 
     </div>
   </form>
- {{/if}} 
+ {{/if}}
 
   <script>
     // $(document).on('change', '.btn-file :file', function() {

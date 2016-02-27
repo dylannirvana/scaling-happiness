@@ -1,16 +1,16 @@
 <template name="myMusicPlaylist">
 
 <ul class="playlist" id="my-playlist">
-  
+
   {{#each tracks}}
     <li class="playlist-item-wrapper" data-playlist="MyPlaylistItems">{{>playlistItem}}</li>
   {{/each}}
 
   {{#if isNoTracks}}
-    Drop songs here
+    yo Drop songs here
   {{/if}}
 
-<!--   <li><a href="#">ATB ft.Sean Ryan - When It Ends It Sta...</a></li>
+  <!-- <li><a href="#">ATB ft.Sean Ryan - When It Ends It Sta...</a></li>
   <li><a href="#">ATB ft. JES - Together</a></li>
   <li><a class="active" href="#">Avicii - Addicted yo you</a></li>
   <li><a href="#">Avicii - Levels</a></li>

@@ -5,20 +5,23 @@
 
   {{#each videos}}
 
-  
+
     <div class="col-md-4 project-tile">
       {{#if isPublic}}
         <a href="" class="open-public-video" data-id="{{_id}}">
           <video src="{{url}}"></video>
         </a>
       {{else}}
-        <a href="{{pathFor 'videoDetails' }}"><video src="{{url}}"></video></a>
-      {{/if}}  
+
+      <!-- Commented out video details code. Client did not want to post there -->
+      
+        <!-- <a href="{{pathFor 'videoDetails' }}"><video src="{{url}}"></video></a> -->
+      {{/if}}
     </div><!-- end col-md-12 -->
 
-  
+
   {{/each}}
-  
+
   </div><!-- row -->
 </section>
 

@@ -28,7 +28,7 @@ Template.profileDiary.events({
           $('.new-diary-editor').find('.froala-view').html('');
         }
       })
-    // check if diary exists for the current date and then just update  
+    // check if diary exists for the current date and then just update
     } else if (postContent != '' && currentDiary) {
       Diary.update(currentDiary._id, {
         $set: {
@@ -70,13 +70,13 @@ Template.profileDiary.helpers({
   'postUserName': function(userId) {
     if(Meteor.users.findOne(userId)) {
       return Meteor.users.findOne(userId).profile.name;
-    } 
+    }
   },
 
   'postUserPhoto': function(userId) {
     if(Meteor.users.findOne(userId)) {
       return Meteor.users.findOne(userId).profile.photo;
-    }  
+    }
   },
 
   'postedOnFormatted': function(postedOn) {
@@ -92,7 +92,7 @@ Template.profileDiary.helpers({
   'nextDate': function() {
     var date = Router.current().params.query.date;
     console.log(moment(date).add('days', 1));
-    
+
     // if there is existing diary, fill its content in text editor
     // otherwise clear text editor from prev diary
     var diary = Diary.findOne({
@@ -102,7 +102,7 @@ Template.profileDiary.helpers({
       $('.new-diary-editor .froala-view').html(diary.content);
     } else {
       $('.new-diary-editor .froala-view').html('');
-    }  
+    }
     return 'date='+moment(date).add(1, 'days').format('YYYY-MM-DD');
   },
 
@@ -119,7 +119,7 @@ Template.profileDiary.helpers({
       $('.new-diary-editor .froala-view').html(diary.content);
     } else {
       $('.new-diary-editor .froala-view').html('');
-    } 
+    }
 
     return 'date='+moment(date).subtract(1, 'days').format('YYYY-MM-DD');
   }

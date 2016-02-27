@@ -22,7 +22,7 @@ Template.trackItem.onRendered(function() {
         $('.inner-content-area').addClass('dragging');
         $('.sidebar-playlist').addClass('jqhover');
       }
-      
+
     },
     stop: function() {
       $('.inner-content-area').removeClass('dragging');

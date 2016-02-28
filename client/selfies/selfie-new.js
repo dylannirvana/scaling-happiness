@@ -1,12 +1,16 @@
         Template.newSelfie.rendered = function(){
 
+          // THIS CODE I INHERITED IS DEPRECATED
+          /* please comment out this section
+          */
+
           // Grab elements, create settings, etc.
           var canvas = document.getElementById("canvas"),
             context = canvas.getContext("2d"),
             video = document.getElementById("video"),
             videoObj = { "video": true },
             errBack = function(error) {
-              console.log("Video capture error: ", error.code);
+              console.log("Big Video capture error: ", error.code);
             };
 
           // Put video listeners into place
@@ -28,13 +32,26 @@
             }, errBack);
           }
 
-
           // Converts canvas to an image
           function convertCanvasToImage(canvas) {
             var image = new Image();
             image.src = canvas.toDataURL("image/png");
             return image.src;
           }
+
+          /*
+          */
+          // END commented section
+
+          // References:
+          // https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/API/Camera_API/Introduction
+          // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia
+
+          // NEW API
+          /*
+
+          */
+          // END new API
 
           $('#take-selfie').click(function() {
             context.drawImage(video, 0, 0, 450, 350);
@@ -46,7 +63,7 @@
               content: '<img src="'+selfieImg+'">',
               postedOn: new Date()
             }, function(err, res) {
-              console.log(err || res);
+              // console.log(err || res);
             });
 
             Selfies.insert({
@@ -55,22 +72,21 @@
               postedOn: moment().format('MM/DD/YYYY hh:mm a'),
               createdAt: moment().format('YYYY-MM-DD')
             }, function(err, res) {
-                console.log(err || res);
+
+                // videoObj = {"video": false};
+                // console.log(videoObj);
+
+                // console.log(err || res);
                 if(err){
-                  console.log(err);
+                  // console.log(err);
                 } else {
-                  Router.go('profileSelfies');
+                  Router.go('profile');
                 }
-            });
+            }); // END insert error
+          }); // END take selfie
+
+          //  Cannot seem to revoke the camera stream object
+          (function() {
+             window.URL.revokeObjectURL(videoObj);
           });
-
-          // So far no success in turning off camera
-
-
-              video.src = window.URL.revokeObjectURL(stream);
-              video.src = null;
-              video.pause();
-              stream.stop();
-
-
         };

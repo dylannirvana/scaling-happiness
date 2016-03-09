@@ -1,6 +1,6 @@
 // get AWS policy and signature from the server @AB
 var aws = Meteor.call('froalaUpload', function(error, result){
-  console.log(result);
+  // console.log(result);
   // TODO: refactor to reactive VAR
   Session.set('awsBase', result); // assign results to the session, reactive var wasn't reliable
 });

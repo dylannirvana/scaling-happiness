@@ -1,10 +1,15 @@
+.cover-container img {
+	width: 200px;
+}
+
+
 li.playlist-item:first-child {
 	margin-top: 10px;
 }
 
 li.playlist-item {
   margin-bottom: 10px;
-  width: 500px; 
+  width: 500px;
   padding-left: 40px;
 }
 

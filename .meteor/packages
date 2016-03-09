@@ -1,0 +1,40 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+accounts-ui
+accounts-password
+alanning:roles
+iron:router
+mrt:flash-messages
+pfafman:font-awesome-4
+mrt:jquery-ui
+twbs:bootstrap
+mrgalaxy:stripe
+email
+aldeed:simple-schema
+aldeed:collection2
+aldeed:autoform
+jquery
+cfs:standard-packages
+cfs:s3
+cfs:ui
+cfs:gridfs
+matb33:collection-hooks
+reactive-var
+sacha:spin
+froala:editor
+froala:editor-reactive
+lepozepo:s3
+momentjs:moment
+themeteorchef:jquery-validation
+matteodem:easy-search
+shammar13:busboy
+gabrielhpugliese:supercalendar
+mizzao:user-status
+fourseven:scss
+percolate:migrations
+insecure

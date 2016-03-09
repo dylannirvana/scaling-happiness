@@ -7,20 +7,21 @@
         <ul class="col-lg-4 col-md-4 top-menu">
           <li><a href="{{ pathFor 'profile' }}">Home</a></li>
 
-          
-            <li class="dropdown"><a                   
-                  class="dropdown-toggle" 
+          {{#if isMusician}}
+            <li class="dropdown"><a
+                  class="dropdown-toggle"
                   id="crowdfunding-menu"
-                  data-toggle="dropdown" 
-                  aria-haspopup="true" 
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
                   aria-expanded="true">Crowdfunding</a>
 
             <ul class="dropdown-menu" aria-labelledby="crowdfunding-menu">
               <li><a href="{{ pathFor 'allProjects' }} ">All Projects</a></li>
-              {{#if isMusician}}<li><a href="{{ pathFor 'newProject' }}">New Project</a></li>{{/if}}
+              <li><a href="{{ pathFor 'newProject' }}">New Project</a></li>
             </ul>
-            </li>          
-
+            </li>
+          {{/if}}
+          
           <!-- <li><a href="#">Music news</a></li> -->
         </ul>
         <!--top-menu end-->
@@ -31,7 +32,7 @@
             <!-- <input type="text" placeholder="Search by email, artist or song..."/> -->
             <button>
               <i class="fa fa-search"></i>
-            </button>            
+            </button>
           </div>
           <div class="search-results">
             {{> esLoadMoreButton index="users"}}
@@ -45,8 +46,8 @@
             {{/ifEsIsSearching}}
 
             {{#esEach index="users"}}
-              <ul> 
-                <li>           
+              <ul>
+                <li>
                   <a href="{{pathFor 'profilePublic'}}">{{profile.name}}</a>
                 </li>
               </ul>

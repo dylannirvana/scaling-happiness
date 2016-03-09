@@ -19,7 +19,7 @@
         {{#if isMyPost ownerId}}
           <i class="fa fa-pencil edit-post"></i>
         {{/if}}
-        
+
         <i class="fa fa-trash delete-post"></i>
 
         <div class="comment-info clearfix">
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="comment-body clearfix">
-          {{{content}}}
+          <a href=""> {{{content}}} </a>
         </div>
 
       {{/if}}
@@ -66,7 +66,7 @@
               </div>
             </div>
             <div class="comment-body clearfix">
-              {{{content}}}
+              <a href=""> {{{content}}} </a>
             </div>
           </li>
           {{/each}}

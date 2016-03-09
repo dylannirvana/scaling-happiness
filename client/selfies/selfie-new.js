@@ -57,36 +57,38 @@
             context.drawImage(video, 0, 0, 450, 350);
             var selfieImg = convertCanvasToImage(canvas);
 
-            Posts.insert({
-              ownerId: Meteor.userId(),
-              userWallId: Meteor.userId(), //todo, add user id if it was posted on someone else's wall
-              content: '<img src="'+selfieImg+'">',
-              postedOn: new Date()
-            }, function(err, res) {
-              // console.log(err || res);
-            });
+            // Posts.insert({
+            //   ownerId: Meteor.userId(),
+            //   userWallId: Meteor.userId(), //todo, add user id if it was posted on someone else's wall
+            //   content: '<img src="'+selfieImg+'">',
+            //   postedOn: new Date()
+            // }, function(err, res) {
+            //   // console.log(err || res);
+            // });
 
             Selfies.insert({
               ownerId: Meteor.userId(),
               image: selfieImg,
               postedOn: moment().format('MM/DD/YYYY hh:mm a'),
               createdAt: moment().format('YYYY-MM-DD')
-            }, function(err, res) {
 
+            }, function(err, res) {
                 // videoObj = {"video": false};
                 // console.log(videoObj);
 
                 // console.log(err || res);
                 if(err){
+                  // Router.go('selfies')
                   // console.log(err);
                 } else {
                   Router.go('profile');
+                  document.location.reload(true);
                 }
             }); // END insert error
           }); // END take selfie
 
           //  Cannot seem to revoke the camera stream object
-          (function() {
-             window.URL.revokeObjectURL(videoObj);
-          });
-        };
+          // (function() {
+          //    window.URL.revokeObjectURL(videoObj);
+          // });
+        }; // END template rendered

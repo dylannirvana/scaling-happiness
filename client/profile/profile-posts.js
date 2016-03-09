@@ -59,5 +59,15 @@ Template.profilePosts.events({
 
   'click #create-comment-cancel': function () {
     Template.instance().commentingOnPost.set(null);
+  },
+
+  'click .comment-body': function(e, t) {
+    e.preventDefault();
+    var selfieId = $(e.currentTarget).data('id');
+    var userid = t.data.publicUser._id;
+    Router.go('publicSelfieDetails', {
+      _id: userid,
+      selfieid: selfieId
+    });
   }
 });

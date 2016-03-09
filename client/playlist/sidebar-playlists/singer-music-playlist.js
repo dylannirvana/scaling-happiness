@@ -1,7 +1,7 @@
 Template.SingerMusicPlaylist.helpers({
   playlist: function(){
     return Playlists.find({
-      ownerId: Meteor.userId(), 
+      ownerId: Meteor.userId(),
       name: 'singers'
     });
   },
@@ -17,13 +17,13 @@ Template.SingerMusicPlaylist.helpers({
 
 
 Template.myMusicPlaylist.events({
-   
+
 });
 
 
 Template.SingerMusicPlaylist.onRendered(function() {
   var instance = Template.instance();
-  console.log(instance);
+  // console.log(instance);
   $(".playlist#singer-playlist").droppable({
     drop: function(event, ui) {
       //var trackId = Blaze.getData(ui.draggable[0])._id;
@@ -35,7 +35,7 @@ Template.SingerMusicPlaylist.onRendered(function() {
         trackTitle: track.title,
         trackArtist: track.author,
         playlistId: instance.mainPls.get() && instance.mainPls.get()._id || Playlists.findOne({
-          ownerId: Meteor.userId(), 
+          ownerId: Meteor.userId(),
           name: 'singers'
         })._id
       }, function(err, res) {
@@ -64,6 +64,6 @@ Template.SingerMusicPlaylist.onCreated(function() {
 
 
     this.mainPls = new ReactiveVar(mainPlaylist);
-    
+
   };
 });

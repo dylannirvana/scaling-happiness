@@ -7,7 +7,9 @@
         <ul class="col-lg-4 col-md-4 top-menu">
           <li><a href="{{ pathFor 'profile' }}">Home</a></li>
 
-          {{#if isMusician}}
+          <!-- CROWDFUNDING -->
+          <!-- Conditional: crowdfunding only shows if a musician -->
+          <!-- {{#if isMusician}} -->
             <li class="dropdown"><a
                   class="dropdown-toggle"
                   id="crowdfunding-menu"
@@ -20,8 +22,8 @@
               <li><a href="{{ pathFor 'newProject' }}">New Project</a></li>
             </ul>
             </li>
-          {{/if}}
-          
+          <!-- {{/if}} -->
+
           <!-- <li><a href="#">Music news</a></li> -->
         </ul>
         <!--top-menu end-->

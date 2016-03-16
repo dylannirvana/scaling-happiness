@@ -57,14 +57,14 @@
             context.drawImage(video, 0, 0, 450, 350);
             var selfieImg = convertCanvasToImage(canvas);
 
-            // Posts.insert({
-            //   ownerId: Meteor.userId(),
-            //   userWallId: Meteor.userId(), //todo, add user id if it was posted on someone else's wall
-            //   content: '<img src="'+selfieImg+'">',
-            //   postedOn: new Date()
-            // }, function(err, res) {
-            //   // console.log(err || res);
-            // });
+            Posts.insert({
+              ownerId: Meteor.userId(),
+              userWallId: Meteor.userId(), //todo, add user id if it was posted on someone else's wall
+              content: '<img src="'+selfieImg+'">',
+              postedOn: new Date()
+            }, function(err, res) {
+              // console.log(err || res);
+            });
 
             Selfies.insert({
               ownerId: Meteor.userId(),
@@ -78,7 +78,7 @@
 
                 // console.log(err || res);
                 if(err){
-                  // Router.go('selfies')
+                  // Router.go('profile')
                   // console.log(err);
                 } else {
                   Router.go('profile');

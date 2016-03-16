@@ -7,7 +7,7 @@ Template.profilePublic.helpers({
   'posts': function() {
     return Posts.find({}, {sort: {postedOn: -1}});
   }
-
+  
 });
 
 Template.profilePublic.events({

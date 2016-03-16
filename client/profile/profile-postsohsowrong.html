@@ -1,0 +1,64 @@
+<template name="profilePostsxxxxx">
+  <ul class="comment-list">
+    {{#each posts}}
+      <li class="comment">
+        {{#if editingPost}}
+          <div id="edit-post-container" class="comment-body clearfix">
+            {{> dashboard_textEditor data=content}}
+            <button class="btn btn-primary pull-right" id="update-post-save">Update</button>
+            <button class="btn btn-danger pull-right" id="update-post-cancel">Cancel</button>
+          </div>
+        {{/if}}
+          {{#if isMyPost ownerId}}
+            <i class="fa fa-pencil edit-post"></i>
+          {{/if}}
+          <i class="fa fa-trash delete-post"></i>
+          <div class="comment-info clearfix">
+            <div class="pull-left user-photo">
+              <img src="{{postUserPhoto ownerId}}" alt="">
+            </div>
+            <div class="pull-left">
+              <div class="user-name"><a href="{{pathFor 'profilePublic' _id=owner}}">{{postUserName ownerId}} posted</a></div>
+              <div class="time-stamp">{{distanceInTime postedOn}}</div>
+            </div>
+          </div>
+          <div class="comment-body clearfix">
+            <a href="">{{{content}}}</a>
+          </div>
+
+          <div class="links">
+            <a href="#" class="leave-comment">
+              comment <i class="fa fa-comment"></i>
+            </a>
+          </div>
+        <!-- {{/if}} -->
+        <ul class="reply-list">
+          {{#each comments}}
+            <li class="reply">
+              {{#if commentingOnPost}}
+              <div id="comment-text-area">
+                {{> dashboard_textEditor}}
+                <button class="btn btn-primary pull-right" id="create-comment-save">Comment</button>
+                <button class="btn btn-danger pull-right" id="create-comment-cancel">Cancel</button>
+              </div>
+              {{/if}}
+              <i class="fa fa-trash delete-comment"></i>
+              <div class="comment-info clearfix">
+                <div class="pull-left user-photo">
+                  <img src="{{postUserPhoto userId}}" alt="">
+                </div>
+                <div class="pull-left">
+                  <div class="user-name">{{postUserName userId}}</div>
+                  <div class="time-stamp">{{postedOnFormatted createdAt}}</div>
+                </div>
+              </div>
+              <div class="comment-body clearfix">
+                <a href="">{{{content}}}</a>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+</template>

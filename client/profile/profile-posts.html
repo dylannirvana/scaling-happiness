@@ -1,27 +1,20 @@
 
 <template name="profilePosts">
-  <!--comment-list start-->
   <ul class="comment-list">
-    <!--comment start-->
     {{#each posts}}
       <li class="comment">
 
       {{#if editingPost}}
-
         <div id="edit-post-container" class="comment-body clearfix">
           {{> dashboard_textEditor data=content}}
           <button class="btn btn-primary pull-right" id="update-post-save">Update</button>
           <button class="btn btn-danger pull-right" id="update-post-cancel">Cancel</button>
         </div>
-
       {{else}}
-
         {{#if isMyPost ownerId}}
           <i class="fa fa-pencil edit-post"></i>
         {{/if}}
-
         <i class="fa fa-trash delete-post"></i>
-
         <div class="comment-info clearfix">
           <div class="pull-left user-photo">
             <img src="{{postUserPhoto ownerId}}" alt=""/>
@@ -34,15 +27,12 @@
         <div class="comment-body clearfix">
           <a href=""> {{{content}}} </a>
         </div>
-
-      {{/if}}
-
+      {{/if}} <!-- END OF EDITING POST  -->
       <div class="links">
         <a href="#" class="leave-comment">
           comment <i class="fa fa-comment"></i>
         </a>
       </div>
-
       {{#if commentingOnPost}}
         <div id="comment-text-area">
           {{> dashboard_textEditor }}
@@ -50,10 +40,10 @@
           <button class="btn btn-danger pull-right" id="create-comment-cancel">Cancel</button>
         </div>
       {{/if}}
+      <!-- END OF COMMENTING ON POST  -->
 
-      <!--reply-list start-->
-      {{#if comments}}
         <ul class="reply-list">
+          <i class="fa fa-trash delete-comment"></i>
           {{#each comments}}
           <li class="reply">
             <div class="comment-info clearfix">
@@ -70,10 +60,11 @@
             </div>
           </li>
           {{/each}}
+          <!-- END OF EACH COMMENTS  -->
         </ul>
-      {{/if}}
-      </li>
-    {{/each}}
 
+
+      </li>
+    {{/each}}   <!-- END OF EACH POST  -->
   </ul>
 </template>

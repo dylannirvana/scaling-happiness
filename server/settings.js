@@ -5,7 +5,7 @@
 //   directory: Meteor.settings.aws.directory
 // };
 
-
+// UNCOMMENT WHEN DEPLOYING TO PRODUCTION
 S3.config = {
   key: "AKIAJI7JFFBN3FHM6LOQ",
   secret: "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",
@@ -19,5 +19,3 @@ S3.config = {
 deploy cmd: modulus deploy -p "gatekeymusic"
 
 ***/
-
-

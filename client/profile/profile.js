@@ -27,6 +27,11 @@ Template.profile.helpers({
     return Followings.find();
   },
 
+// I added this but ???
+  'comments': function() {
+    return Posts.find().fetch().reverse();
+    // return Posts.find({}, {sort: {postedOn: 1}});
+  },
 
   'posts': function() {
     //return Posts.find().fetch().reverse();
@@ -76,7 +81,7 @@ Template.profile.events({
         content: postContent,
         postedOn: new Date()
       }, function(err, res) {
-        console.log(err || res);
+        // console.log(err || res);
         if(!err){
           $('.new-post-editor').find('.froala-view').html('');
         }

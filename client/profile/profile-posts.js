@@ -32,14 +32,28 @@ Template.profilePosts.events({
 
   'click .delete-post': function() {
     var postId = this._id;
-    // console.log(postId) This showed the post id
+     console.dir(this) // object with _id
     if(confirm('Are you sure you want to delete this update?')) {
       Posts.remove(postId);
     }
   },
 
+// COMMENTS
+
+  // Cannot delete comments
+  'click .delete-comment': function() {
+    var commentId = this._id;
+     console.dir(commentId) // object with _id
+    if(confirm('Are you sure you want to delete this comment?')) {
+      Posts.remove(commentId);
+    }
+  },
+
+
+
   'click .leave-comment': function () {
     Template.instance().commentingOnPost.set(this._id);
+    console.dir(this._id);
   },
 
   'click #create-comment-save': function (event, template) {

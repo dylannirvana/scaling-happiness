@@ -1,16 +1,12 @@
 ###New Notes
 Previous developer notes at bottom.
 
-My main recommendations are to refactor this into Iron Meteor scaffolding, which I began and can be found at https://github.com/dylannirvana/irongate but need to completed, mainly because in the difficulty in dealing with the legacy code. I have attempted to keep as much of the previous developers work as possible, though much of it is deprecated. The purpose of course would be to encapsulate the code as well to make it more understandable to other developers.
+My main recommendations are to refactor this into Iron Meteor scaffolding, which I began and can be found at https://github.com/dylannirvana/irongate but need to completed, mainly because in the difficulty in dealing with the legacy code. I have attempted to keep as much of the previous developers work as possible, though some of it is deprecated. The purpose of course would be to encapsulate the code as well to make it more understandable to other developers.
 
-Many of the modules do not work properly. The calendar API for example should be entirely replaced. I have reached out to the authors of some of these packages, but to date none have responded. I posted issues on Stack Overflow and Meteor forum and got numerous helpful responses in dealing with some of the legacy code.
-
-The UI is a huge problem. I would prefer to rebuild it from scratch but my approach was to retrofit as much as I can FIRST, then produce original code. Get the app to work first, then improve it.
-
-Until the app is in an MVC pattern I do not think that it will be stable. 
+The UI is a huge problem. I would prefer to rebuild it from scratch but my approach was to retrofit as much as I can FIRST, then produce original code. Get the app to work first, then improve it. Until the app is in an MVC pattern I do not think that it will be stable.
 
 ###Notes when I first got the project
-I am inheriting this app from other developers and tasked with some reverse engineering. Along with addressing some specific concerns of the client and solving those problems as best I can, I will try to make this application easier to understand and navigate for other developers.
+I am inheriting this app from other developers and tasked with  reverse engineering. Along with addressing some specific concerns of the client and solving those problems as best I can, I will try to make this application easier to understand and navigate for other developers.
 
 The functionality of this application is made visible in the way the CLIENT folder is organized,
 
@@ -32,7 +28,7 @@ projects
 
 selfies
 
-all show modules or services provided by GKM, though the subfolders seem to reflect structure more than function.
+all show services provided by GKM, though the subfolders seem to reflect structure more than function.
 
 I have included README files throughout the application, that hopefully provide some direction as well as a place for developers to communicate.
 

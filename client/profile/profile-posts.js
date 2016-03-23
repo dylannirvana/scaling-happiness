@@ -42,6 +42,7 @@ Template.profilePosts.events({
 
   // Cannot delete comments
   'click .delete-comment': function() {
+    _id = this._id;
     var commentId = this._id;
      console.dir(commentId) // object with _id
     if(confirm('Are you sure you want to delete this comment?')) {
@@ -63,6 +64,7 @@ Template.profilePosts.events({
     Posts.update(this._id, { $push: {
       comments: {
         content: commentContent,
+        _id: this._id,
         createdAt: new Date(),
         userId: Meteor.userId()
       }

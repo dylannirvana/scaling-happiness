@@ -7,6 +7,10 @@ Meteor.methods({
     }
   },
 
+  // deleteComment: function() {
+  //   // Posts.comments.remove()
+  // },
+
   updatePhoto: function(photoUrl) {
     Meteor.users.update(this.userId, {
       $set: {
